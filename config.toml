@@ -1,10 +1,12 @@
 baseurl = "/"
-title = "Terrassa"
-author = "Daniel Zaragoza (Danielkvist)"
+title = "Real Magic"
+author = "Hope Snyder"
 googleAnalytics = ""
 defaultContentLanguage = "en"
 language = "en-US"
 paginate = 3
+enableEmoji = "true"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 theme = "hugo-terrassa-theme"
 
@@ -47,24 +49,24 @@ theme = "hugo-terrassa-theme"
     showAuthor = true
     showDate = true
     showTags = true
-    dateFormat = "Monday, Jan, 2006"
+    dateFormat = "Monday, Jan 02, 2006"
 
 [params.contact] # Contact info
-    email = "example@gmail.com"
-    phone = "xxx xxx xxx"
+    email = "hks7w2@mail.missouri.edu"
+    phone = ""
     skype = ""
-    address = "419 Creek St. Revere, MA 02151"
+    address = "Columbia, MO 65201"
 
 [params.social]
-    twitter = "https://twitter.com/john"
-    facebook = "https://facebook.com/john"
-    github = "https://github.com/john"
+    twitter = "https://twitter.com/junekay92"
+    facebook = "https://www.facebook.com/hope.snyder.169"
+    github = "https://github.com/JuneKay92"
     gitlab = ""
-    codepen = "https://codepen.io/john"
-    instagram = "https://instagram.com/john"
+    codepen = ""
+    instagram = ""
     pinterest = ""
     youtube = ""
-    linkedin = ""
+    linkedin = "https://www.linkedin.com/in/hope-snyder-43662b160/"
     weibo = ""
     mastodon = ""
     tumblr = ""

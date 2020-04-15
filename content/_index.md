@@ -8,5 +8,5 @@ title: Home
 weight: 1
 ---
 
-# Terrassa
-## The Hugo theme for you. Or for your company.
+# I'm Hope Snyder
+## Doing, Teaching, & Creating Data Science

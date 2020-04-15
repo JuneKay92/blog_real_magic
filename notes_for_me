@@ -1,0 +1,7 @@
+Info about how the website is set up
+
+1) content holds all the content and pages for the website.  A little exploring of each of the files that are there all ready has revealed the following:
+  - _index.md is the title page big picture area.
+  - about.md is for the about page (obviously)
+  - the sections folder has the extra stuff at the bottom of the home page.  I could kinda make a self summary/pitch here I guess.
+  
