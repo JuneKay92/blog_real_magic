@@ -4,4 +4,26 @@ Info about how the website is set up
   - _index.md is the title page big picture area.
   - about.md is for the about page (obviously)
   - the sections folder has the extra stuff at the bottom of the home page.  I could kinda make a self summary/pitch here I guess.
+  - contact is the contact page, but it doesn't have anything for including the form widget so... how do I get rid of that? here's hoping it works with netlify... I don't think so though...
+
+2) there are two folders for new posts: "post" and "posts" Blogdown naturally creates new posts in the "post" folder.  But for this theme, it wants things in the "posts" folder.  So I can write up a post entirely and hold it until I'm ready to make it public.
+
+3) with that the way to add a page to the site I need to add a bit to the config file like this:
+
+[[menu.main]]
+    name = "Testing"
+    url = "/test"
+
+It will show up at the end of the menu list.  OR in the markdown document.  Steal the one from the about page and change the title and the weight values.  Seems a little better and I can have a bit more control.
+
+4) Change the colors for the background things in base.css and in style.css.  The website will need to be reinitialized so restart R and serve the site again to see the updates.
+
+5)How to set up things to update automatically once hosted on netlify:
+  - (potentially) put public folder under .gitignore once the full set up is up and ready.
+  - connect Netlify to my Github to get it to render automatically.
+  - don't need to prebuild to publish on netlify
+  
+6) from example webistes that I hunted down:
+  - [[menu.links]] Adds links to the menu bar to other websites and things.  Maybe I can stick my full resume there?
+  - 
   

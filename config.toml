@@ -24,7 +24,7 @@ theme = "hugo-terrassa-theme"
     link = "contact" # Relative URL
 
 [params.separator] # Separators between sections on the home page
-    show = false
+    show = true
 
 [params.fa] # Font Awesome options
     version = "5.7.2"
@@ -32,7 +32,7 @@ theme = "hugo-terrassa-theme"
 
 [params.form] # Contact form
     netlify = true
-    action = "https://formspree.io/your@email.com"
+    action = "https://formspree.io/hks7w2@mail.missouri.edu"
     method = "POST"
     inputNameName = "name"
     inputNameLabel = "Name"
@@ -95,3 +95,13 @@ theme = "hugo-terrassa-theme"
     [privacy.youtube]
         disable = false
         privacyEnhanced = true
+        
+[[menu.main]]
+  name = "CV"
+  url = "/pdf/snyder_h_cv.pdf"
+  weight = 3
+  
+[[menu.main]]
+  name = "RLadies"
+  url = "https://code-rladies.github.io/2019-12-15-Welcome/"
+  weight = 3
