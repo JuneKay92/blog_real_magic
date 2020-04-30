@@ -207,6 +207,7 @@
 /* CARD */
 .card {
 	margin-bottom: 1.75rem;
+	margin-left: 15rem;
 	max-width: 900px;
 	text-justify: distribute;
 	width: 70%;
@@ -261,7 +262,7 @@
 }
 
 .post__body {
-	margin: 1.75rem 24% 0.75rem;
+	margin: 1.75rem 2% 0.75rem;
 }
 
 .post__body > figure {

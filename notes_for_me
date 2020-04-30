@@ -27,3 +27,14 @@ It will show up at the end of the menu list.  OR in the markdown document.  Stea
   - [[menu.links]] Adds links to the menu bar to other websites and things.  Maybe I can stick my full resume there?
   - 
   
+7) Theme fucking hates RMD files.  SO this is bullshit.  Everything I have done for weeks is all fucking worthless.  Can't even save it as a fucking stupid md file because all the pictures are broken, the code chunks look awful, the layout is stupid....  God why did I even try.
+
+  - I did find where to fixe the margins problem in style.css at least... 
+  
+  - I can make it work... I guess I can deal with the output of the code.  I just can't have any output and code done in the same chunk.  It'll have to be split so I can format it a little better.  And the HTML tags are doable.  I want to learn how to read that code anyway.  The figures can still be put into the posts and referenced in the text.  A unique look, right?
+
+8) Found where to change the summary on the "card" for the blog posts.  In theme/layout/_default/card.html  Not really the main problem right now but at least I can maybe change the summary of the blog post somehow.
+
+9) tags can't have spaces
+
+10) 

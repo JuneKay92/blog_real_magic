@@ -18,7 +18,7 @@ title: How architects aren't as bad as you think
 
 [The 10 best resources for modular homes](#). Home builders by the numbers. *Why you'll never succeed at interior design ideas*. 12 myths uncovered about small house plans. How designer furniture can help you live a better life. Why the world would end without floor plans. How hollywood got interior designs all wrong. An expert interview about kitchen designs. Why our world would end if bathroom designs disappeared. Why mom was right about bathroom designs.
 
-```python
+```golang
 package main
 
 import "fmt"

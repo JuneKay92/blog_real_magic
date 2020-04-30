@@ -1,0 +1,58 @@
+Talking Points:
+
+- Academicly published articles were developed around the 1600s and have not really been updated since
+
+- The biggest advancement scientiic papers have made, at least as discussed by these articles, is that it moved to pdf, but it's still a words on a page
+
+- And as the article from the atlantic claims, those words have become more specialized, longer, and far more complicated with calculations and jargon
+
+- Things have gotten so complicated that the scientific paper in fact fails spectacularly at what it is trying to do: communicate exactly how you arrived at the results that you did
+
+- The artcile from scholasticHQ discuss three specific areas that scholarly journals seem to be holding onto that are holding them back in the early internet era.
+
+	- one is only publishing pdfs and as we said before, that still leaves 	things as words on a page.  It doesn't have any interactable parts and 	poor layout.
+
+	- waiting to officially publish articles until they fit into a 	collection for a full issue.  This practically halts the feedback loop 	and delays time-sensitive articles of being released
+
+	- the submission portals are antiquated and complex.  It forces so 	many formatting changes to be done before publishing can even be done
+
+- These articles also offer potential ways to help the scientific paper to move into the 21st century.
+
+	- Rolling publishing of the articles
+	- centralizing the submission portals and review system
+	- Most importantly, how to improve the content of the papers 	themselves:
+		- move to a HTML publishing format so it has a dynamic format
+		- publish a "notebook" of sorts that includes plots, pictures 		and ways to understand experimental setups and models that 			don't require an skilled imagination
+		- publishing the software that lead to the scientific results 		rather than just discussing and publisizing the results
+
+- The author of the Chronicle article says that scientists should focus more on sharing their software development achievements than trying to maximizing publications within the current system
+
+- Developing software involves more than just writing code, it includes the documentation, examples, and tests, which sounds eerily similar to what is already in scientific articles, but with a richer context because the software itself is included!
+
+- As an example, I have found a published Shiny application.  It is short and explains what can be found in the app and how the app works.
+
+- Of course if the type of publishing changes, the measure of success needs to change as well.  In terms of software development success can be measured in terms of usefulness and impact. It would be less demanding than increasing the number of articles published as there is continuous development and integration.  So a piece of software can be constantly improved upon, with the help of the community which is less isolating.
+
+
+
+
+society that runs the journals; gets a kick back from the publishers and the societies can't exists as they are without it; 
+
+resistance from people at the top and changing the measure of success
+
+prolific article publishing doesn't mean all your papers are amazing
+
+"post truth phase" era where people struggle to figure out what is real; p-hacking and data manipulation and constant citing of papers with hard to achieve results; replication crisis
+
+ability to cherry pick the articles that fit your ideas and theories
+
+computational notebook--think python jupyter notebooks
+
+how to house all the software? need to have a server and have membership fees to access the content
+
+perhaps just start small: get rid of the column format; or use HTML option
+
+are you giong to play the game and pump out as much as possible or am I going to learn the theory and software (flexibility in after PhD, but constantly asked why aren't you publishing)
+
+software is harder to half-ass (isn't that better?), it will be checked rather than taking the researchers word for it
+
