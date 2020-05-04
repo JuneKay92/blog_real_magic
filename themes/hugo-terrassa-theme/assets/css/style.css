@@ -177,7 +177,7 @@
 
 /* SECTION */
 .section {
-	margin: 2.75rem 24%;
+	margin: 2.75rem 5%;
 	text-justify: distribute;
 }
 
@@ -262,7 +262,7 @@
 }
 
 .post__body {
-	margin: 1.75rem 2% 0.75rem;
+	margin: 1.75rem 24% 0.75rem;
 }
 
 .post__body > figure {

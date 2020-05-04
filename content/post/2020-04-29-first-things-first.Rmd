@@ -1,7 +1,7 @@
 ---
 title: First Things First
 author: Hope Snyder
-date: '2020-04-30'
+date: '2020-05-04'
 slug: first-things-first
 categories:
   - About
@@ -17,24 +17,28 @@ images: []
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## Quote as Introduction:
-<div align="center">**"The first time you do a thing is always exciting."**</div>
+<p style="text-align: center;">
+**"The first time you do a thing is always exciting."**
+</p>
 
-I believe this quote is attributed to Agatha Cristie, the wonderful mystery novelist, but I feel that so many people have expressed the exact same sentiment.  
+I believe this quote is attributed to Agatha Cristie, the wonderful mystery novelist. The sentiment is true here too.  Welcome to the first post of my first blog!  I am so excited to start this adventure with whoever out there might be reading.
 
-Feelings about what i was feeling about the blog
+There are so many things that I have discovered about R while learning the programming language and coding in general.  I wanted a place to collect all of the techniques and my experiments with new packages.  One, so I could have a place to refer to; and two, so in a way I could pay it forward and be an example for another data scientist.  So if you are here for help, I hope you find what you need.  
 
-## Who am I?
+# Who am I?
 
-I'm Hope and I am a burgeoning data scientist.  I have begun work on my doctoral disseration in Quantitative Psychology at the University of Missouri looking at context effects when making choices. My undergraduate degree is in Mathematics and Psychology and I want to use all of the skills I got from both of these areas.  I truly believe that data science is the perfect career to marry these two areas together.
+I'm Hope and I am a burgeoning data scientist.  I have begun work on my doctoral disseration in Quantitative Psychology at the University of Missouri looking at context effects when making choices. My undergraduate degree is in Mathematics and Psychology and I want to use all of the skills I got from *both* of these areas.  I have been on a quest to find a career path that lets me stick to this goal.  I believe I have finally found it in the world of data science.
 
-My career interests involve learning and sharing the world of data science.   I have experience with machine learning and feature engineering, Bayesian statistics, and GIT version control.  My analysis tool of choice is R, but I am working on learning Python as well.  I am committed to continue learning about each of these topics as well as cloud computing and database software.  I have also cofounded an RLadies chapter in Mid-Missouri, [CodeR-Ladies](https://code-rladies.github.io/).
+My career interests involve learning and sharing the world of data analytics and data science.   I have experience with machine learning and feature engineering, Bayesian statistics, and GIT version control.  My analysis tool of choice is R, but I am working on learning Python as well.  I am committed to continue learning about each of these topics as well as cloud computing and database software.  I have also cofounded an RLadies chapter in Mid-Missouri, [CodeR-Ladies](https://code-rladies.github.io/). Pop in and visit with us, we would love to see you!
 
 Outside of the professional world, I am an avid writer, a student of Bob Ross and Hogwarts (seriously! register [here](http://www.hogwartsishere.com/courses/)!), and I go rock climbing whenever I can.
 
-## About the blog
+# Why is it called "Real Magic"?
 
-what is it going to be about and why im writing it.
+One thing I have noticed when working on analyses and searching around for solutions to coding problems is that the solution just miraculously worked.  Friends of mine who are not inclined to fighting the battle of writing clean, concise, and correct code call it all "magic" and "computer wizardry".  
 
-Should I even try to include a picture?
+<img src="/image/hocus_pocus.jpg" width=500 />
 
+And I have to agree with them.  
+
+Sometimes the code just magically works.  Sometimes, what you are able to accomplish amazes even you!  Sometimes it only works under the light of the thrid harvest moon and a sacrifice of blood, sweat, and tears.  But no matter how much it frustrates you, it's always magic.  Real-life magic.
