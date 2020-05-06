@@ -1,1 +1,3 @@
-# blog_real_magic
+# Real Magic
+
+A blog about Data Science techniques and experiments by Hope Snyder.  Let's do some Real-Life Magic!
