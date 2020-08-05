@@ -1,0 +1,49 @@
+---
+title: 'How Is It Made: Blogdown'
+author: Hope Snyder
+date: '2020-08-14'
+slug: how-is-it-made-blogdown
+categories:
+  - How To
+  - R Packages
+tags:
+  - publishing
+  - blogdown
+  - Rmarkdown
+  - hugo
+description: 'This blog site was made entirely in R with the help of one package.  This is my story of how I made it work.'
+publishDate: '2020-05-26T18:03:14-05:00'
+images: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+I have been wondering for a few weeks what to write about for my first official coding/R centric post.  I wanted it to be something that I was familiar with and a project I have been spending a lot of time on.  Recently, that has been this blog since I have decided to do this completely within R.  It might seem a bit obligatory, but here is what I have learned about working with blogdown.
+
+# The Basic Recipe
+
+- just an intro, there were a lot of little intricacies but I won't go through them all in detail.
+- more detail found in the book
+- general workflow
+
+# Sugar, Spice, and Everything Nice
+
+- once everything is set up through the workflow, you need to customize and here is where the details come in
+- personal note page filled with cheat sheet info for me
+- gotta mess with the css and html, include that some of the typical workflows for writing plan pdfs or html docs don't quite work as planned (code examples?)
+
+# A Dash of Determination
+
+- things that were super hard for me to overcome
+- css settings were changing the margins
+- nervousness of actually putting yourself out there
+- accepting the challenges I may have put on myself and that will appear as I continue.
+
+# Small Asides about Python
+- the way to do something similar with python and fastpages
+-be sure to highlight that I know very little about python so I can't go into details.
+
+
+

@@ -1,7 +1,7 @@
 ---
 title: Are Scientific Papers Outdated?
 author: Hope Snyder
-date: '2020-05-04'
+date: '2020-08-07'
 slug: scientific-papers
 categories:
   - Academia
@@ -14,13 +14,15 @@ publishDate: '2020-05-04T16:06:54-05:00'
 images: []
 ---
 
-Something I have been thinking about a lot lately is the focus in academia on publishing.  Writing papers, reviewing potential articles, writing and getting grants...  Success in the academic world is defined by how prolific you are as a scientific writer.  How many articles have you written and how many of times of those has been cited?  And if you aren't prolific enough, it is that much harder for you to get a position after you finish the PhD.  If you do not want to go for an academic job, like me, the skill for that specific type of writing has very little application and you have very little motivation to do it.  
+Something I have been thinking about a lot lately is the focus in academia on publishing.  Writing papers, reviewing potential articles, writing and getting grants...  Success in the academic world is defined by how prolific you are as a scientific writer.  How many articles have you written and how many of times have you been cited?  And if you aren't prolific enough, it is that much harder for you to get a position after you finish the PhD.  If you do not want to go for an academic job, like me, the skill for that specific type of writing has very little application and you have very little motivation to do it.  
 
-But why do we as academics continue to focus on writing scientific papers?  Academic scientific papers were developed around the 1600s and have not really been updated since.  The main advancement scientific journals have made is to make articles available online as a PDF.  Unfortunately, that doesn't realy update the format.  Ideas are still shared as words on a page. 
+But why do we as academics continue to focus on writing scientific papers?  Academic scientific papers were developed around the 1600s and have not really been updated since.  The main advancement scientific journals have made is to make articles available online as a PDF.  Unfortunately, that doesn't really update the format.  Ideas are still shared as words on a page. 
 
 As an article from [the Atlantic](https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/) claims, scientific research has become far more specialized and complicated and in fact they fail spectacularly at what they are trying to do: communicate exactly what research was done and how the conclusions were arrived at.
 
 There seems to be a few things holding back the scientific publishing community (ref. articles from [ScholasticHQ](https://blog.scholasticahq.com/post/why-academic-journals-are-following-outdated-publishing-practices/) and [CHE](https://www.chronicle.com/article/The-Scientific-Paper-Is/248045)).  A few examples are sticking to a static format, such as PDFs, and waiting to publish articles until they fit into a collection for an issue.  One potential update that has caught my attention is shifting the publishing format from an article to software development packages.
+
+<img src="/image/cat_laptop.jpg" width=500 class="center"/>
 
 Developing software involves more than just writing code.  It includes the documentation, examples, and tests of that code.  It sounds eerily similar to what is already in scientific articles, but with a richer context because the software itself is included!  Software is harder to do superficially and seems more complete in my eyes.  The best part is readers, students, and fellow researchers can ask and answer questions themselves using the dynamic parts of the software.  The results can be checked directly instead of taking the researchers word for it.  Interactive learning at its best. The original researcher can also take part!
 

@@ -1,7 +1,7 @@
 ---
 title: First Things First
 author: Hope Snyder
-date: '2020-05-04'
+date: '2020-08-03'
 slug: first-things-first
 categories:
   - About
@@ -37,7 +37,7 @@ Outside of the professional world, I am an avid writer, a student of Bob Ross an
 
 One thing I have noticed when working on analyses and searching around for solutions to coding problems is that the solution just miraculously worked.  Friends of mine who are not inclined to fighting the battle of writing clean, concise, and correct code call it all "magic" and "computer wizardry".  
 
-<img src="/image/hocus_pocus.jpg" width=500 />
+<img src="/image/hocus_pocus.jpg" width=500 class="center"/>
 
 And I have to agree with them.  
 
