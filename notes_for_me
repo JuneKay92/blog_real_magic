@@ -40,3 +40,7 @@ It will show up at the end of the menu list.  OR in the markdown document.  Stea
 10) images it seems can be put in two different ways:
   - ![](/image/hocus_pocus.jpg) (a way to put in captions for the picture but no control over sizes)
   - <img src="/image/hocus_pocus.jpg" width=300 /> (a way to adjust sizes and prolly a lot of other options.  I'll need to look up how to do it in HTML)
+  
+11) signed up for the formspree thing, but i don't think I can test it with it being locally served.  We'll see what happens when I actually deploy the blog.  OR see about it being done by Netlify once it's hosted.
+
+12) I added something to the custom.css file to center my images when I add them to posts. It will end up looking like this: <img src="/image/hocus_pocus.jpg" width=500 class="center"/>
