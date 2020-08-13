@@ -17,9 +17,7 @@ images: []
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-<p style="text-align: center;">
-**"The first time you do a thing is always exciting."**
-</p>
+> The first time you do a thing is always exciting.
 
 I believe this quote is attributed to Agatha Christie, the wonderful mystery novelist. The sentiment is true here too.  Welcome to the first post of my first blog!  I am so excited to start this adventure with whoever out there might be reading.
 
