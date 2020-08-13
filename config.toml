@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://realmagic.netlify.app/"
 title = "Real Magic"
 author = "Hope Snyder"
 googleAnalytics = ""
