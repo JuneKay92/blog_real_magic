@@ -1,0 +1,43 @@
+---
+title: An R Introduction
+author: Hope Snyder
+date: '2020-08-21'
+slug: an-r-introduction
+categories:
+  - R Packages
+tags:
+  - about
+  - intro
+  - R
+  - beginner
+description: 'Looking for some help installing R? It is your first time opening R or RStudio? Here are some helpful tips for typing out your first code!'
+publishDate: '2020-08-11T16:13:28-05:00'
+images: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+
+# First Things First: Installation
+
+- "getting out the ingredients"
+- where to go
+- what order
+- important little details (like systme paths)
+
+# What Should I Do Next?
+
+- some good packages to install
+- basic coding (gotta find a fun example)
+
+# Writing and Document Creation
+
+- minimal intro to markdown
+- should be short, all the coding bits are the same as last group
+
+# Back to School
+
+- welcome
+- be safe

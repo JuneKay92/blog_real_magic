@@ -20,30 +20,41 @@ images: []
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-I have been wondering for a few weeks what to write about for my first official coding/R centric post.  I wanted it to be something that I was familiar with and a project I have been spending a lot of time on.  Recently, that has been this blog since I have decided to do this completely within R.  It might seem a bit obligatory, but here is what I have learned about working with blogdown.
+For my first R-centric post, it makes since to talk about how this blog is made.  This blog was developed entirely withing an R environment, utilizing Hugo templates, Netlify's application for deploying the site, and most importantly the blogdown package from Yihui Xie, [\@xieyihui](https://twitter.com/xieyihui). 
+
+<img src="/image/blogdown_hex.png" width=500 class="center"/>
+
+It seems a bit obligatory, but I would have loved more help when it came to developing this blog (so many mysterious errors!).  An account of the frustrations someone else faced would have made me feel so much better about the roadblocks I hit along the way.  You will make it, I promise!
 
 # The Basic Recipe
 
-- just an intro, there were a lot of little intricacies but I won't go through them all in detail.
-- more detail found in the book
-- general workflow
+In order to get started working on your own blog or website, you need to get all the pieces together.  Blogdown is a package for R that helps with creating websites through R Markdown.  It produces a static website that doesn't require any behind-the-scenes, server scripts.  You can install it by typing ```install.packages('blogdown')```.  Double check that it installs the ```hugo``` package as well.  I'll go through some basics on how to set up a new website.  More detail can be found in this [book](https://bookdown.org/yihui/blogdown/).
+
+The first step to creating your website is to decide on the theme and layout.  [Hugo](https://themes.gohugo.io/) has a huge collection of themes available for the choosing. Most have a GitHub repository which is what blogdown uses to create your website.  Also, it will be easier to find update notes for your selected theme and replacement files (if needed!).  
+
+Now that you have a theme in mind, it's time to create a website!  Blogdown lets you do this with one command: ```blogdown::new_website(theme = "user/themename")```.  This one line of code will create a bunch of folders that hold the theme you picked, the configuration files, and the content of your website.  I would recommend creating an R project to keep everything together as well as a GitHub repository or other version control method (need help with this? [Coming soon](https://realmagic.netlify.app/contact/)!). 
+
+A note about the files that make up the content of your website:  Blogdown will likely make three files that hold the content of your website, "content", "public", and "static".  Do **NOT** touch anything in the public file.  The built version of your website lives there and messing with it is not a good idea.  Static is were you can keep any static files such as images and PDFs that you want to link to on your site, like [this](https://realmagic.netlify.app/pdf/snyder_h_cv.pdf).  Finally, content is where you will be working most often.  This is where you can add posts to your website and change existing pages.
+
+You now have a basic website ready to go!  Huzzah!  Here is another wonderful thing about Blogdown:  It includes a few addin features if you are using RStudio.  Click on the "Addins" drop down menu and you'll find a few options to make creating your site a little easier.  The "Serve Site" option will open a local version of your website so you can track all the changes you make in real time.   There is also the "New Post" option that will guide you through the set up of a new page to add to your website.
+
+The last step in making your website is to publish it.  There are many different options for how to do this, but I can only really talk about the one I used.  Netlify is an application for deploying websites.  It is possible to connect Netlify to GitHub so that it will continuously deploy your site as you update your repository for the website. 
 
 # Sugar, Spice, and Everything Nice
 
-- once everything is set up through the workflow, you need to customize and here is where the details come in
-- personal note page filled with cheat sheet info for me
-- gotta mess with the css and html, include that some of the typical workflows for writing plan pdfs or html docs don't quite work as planned (code examples?)
+Now that you know the basics, it's time to get into more of the details.  You need to make the website your own, give it flavor and make it fun!  The main way that blogdown makes available right away is the configuration file, ```config.toml```.  Here you can set up the basics of your website, such as the menu, contact and social information, set the language and time format, and the layout of your posts.  Also, you can control what files will be ignored when it builds the website.
 
-# A Dash of Determination
+The great thing about creating your website with blogdown is that it is completely customizable.  Of course this means diving into the theme files.  This may get a bit tricky because those are comprised of CSS and HTML.  Many people might argue that you shouldn't edit these files found in the "themes" folder of your website.  But if you are brave enough to face the challenge, I argue that you should!  You should have a version controlled repository of all your files, so that if something breaks, you can go back to a working version.  And you will be able to make your website look exactly the way you want.  To me, that and learning my way around a new coding language is worth the headaches and frustration.  
 
-- things that were super hard for me to overcome
-- css settings were changing the margins
-- nervousness of actually putting yourself out there
-- accepting the challenges I may have put on myself and that will appear as I continue.
+I am by no means an expert in CSS and HTML but the way I learn what to adjust and how to adjust it is by creating a text file in my website repository called "notes_for_me".  It is a stream of consciousness sort of document where I express what I want to do, my frustrations when I'm having trouble figuring things out, and most importantly, the solutions that I find.  These solutions range from being slick and neat to ugly and cheat-y, as long as it works.  It's something I can refer to as a cheat sheet and it shows me how much I have grown while completing a project.  
 
-# Small Asides about Python
-- the way to do something similar with python and fastpages
--be sure to highlight that I know very little about python so I can't go into details.
+<img src="/image/witch_computer.jpg" width=500 class="center"/>
+
+For example, I have a record in that text file of where to change the colors for my website, if I ever get tired of the blue.  I wrote down what CSS files I need to look in and what to change.  Also, something that frustrated me so much making this blog was margins!  Originally, the paragraphs were super thin in the browser.  It was so hard to find where the margins were being controlled within the website.  There were what felt like one million places in the CSS that claimed to adjust the margins, but no amount of ridiculous numbers changed a thing.  After a few days of trying things but getting no where, I discovered there was something called "padding" that influenced where the *text* margins were located.  The margins I was messing with was the *page* margins the entire time.  All it took was a dash of determination to overcome the challenges of the theme I had chosen and finally getting my blog posts to look as I wanted them to look.
+
+</div>
+Hopefully, this has helped you build a functioning website entirely made within R and Rstudio!  You are not alone in the frustrations you face while developing your website.  There are new things that get me stuck every time I update this blog.  A few lines of code and a dash of determination is all you need and... *Presto!* 
+
 
 
 
