@@ -1,0 +1,40 @@
+---
+title: What is This Insanity? CSS
+author: Hope Snyder
+date: '2020-08-28'
+slug: what-is-this-insanity-css
+categories:
+  - About
+tags:
+  - about
+  - blogdown
+  - css
+  - intro
+description: 'CSS is great for making a website or PDF look exactly the way you want.  But it can be a bit of a pain to figure out.  Hopefully this will help you get started.'
+publishDate: '2020-08-17T12:04:47-05:00'
+images: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# What does CSS do?
+
+- beautifying your documents
+- personalize
+- layout
+- inserting backgrounds and images
+
+# For the Website
+
+- someone already made the majority of the CSS I used
+- I just adjusted as needed
+- Gave me a place to start and code to mess with to learn how it works
+
+# In Some Slides
+
+- using xarigan slides from the same guy who made blogdown
+- again using premade themes as the base
+- created my own theme, able to insert my own backgrounds and images
+- even GIFs!
