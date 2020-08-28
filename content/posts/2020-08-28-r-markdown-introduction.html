@@ -1,0 +1,78 @@
+---
+title: 'How Is It Made: R Markdown'
+author: Hope Snyder
+date: '2020-08-28'
+slug: r-markdown-introduction
+categories:
+  - R Packages
+  - How To
+tags:
+  - beginner
+  - about
+  - Rmarkdown
+  - R
+  - publishing
+description: 'A document that has the text, code, and results all in one? Yes, please!'
+publishDate: '2020-08-28T14:11:56-05:00'
+images: []
+---
+
+
+
+<p>One potential new file that you can create in RStudio is a R Markdown file. This allows you to create PDF, HTML, or even a Word document. It can also go beyond just text documents. You can also create presentation slides, books, dashboards, and vignettes with R markdown files. In fact, these blog posts are all written in R Markdown files!</p>
+<p><img src="https://vignette.wikia.nocookie.net/powerlisting/images/c/c7/The_Book_Of_Shadows_Divination.gif/revision/latest?cb=20190319183723" width=500 class="center"/></p>
+<div id="creating-the-document" class="section level1">
+<h1>Creating the Document</h1>
+<p>You can select R Markdown when you create a new file. If you are typing in a plain text file, you can save it with “.Rmd” as the file type.</p>
+<p>The file should start with a header that defines some key characteristics of your file. It should look something like this:</p>
+<pre class="markdown"><code>---
+title: &quot;Book of Shadows&quot;
+author: &quot;Bridget Bishop&quot;
+date: &quot;8/28/2020&quot;
+output: pdf_document
+---</code></pre>
+<p>There are many options to update the format of the document you produce. A few examples are the css to use for style, how to number your section headers and including a table of contents. Like many other things that can be done using R, it is completely customizable. It is important to insert white space into the header properly. Some parts, like the formatting, will be tabbed over, others will not be. The header then will then look something like this:</p>
+<pre class="markdown"><code>---
+title: &quot;Book of Shadows&quot;
+author: &quot;Bridget Bishop&quot;
+date: &quot;8/28/2020&quot;
+output: 
+  pdf_document:
+    toc: true
+    number_section: true
+    css: &quot;style.css&quot;
+---</code></pre>
+<p>For a more complete list of options, check out the last page of this <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference</a> from RStudio.</p>
+</div>
+<div id="markdown-language" class="section level1">
+<h1>Markdown Language</h1>
+<p>Once you have the header set up, you are ready to start creating your document. You can start writing right away! In order to get formatting like italics and inserting pictures, you need to use the markdown language. Don’t worry! It’s not <em>another</em> coding language you need to learn. Markdown is a set of formatting tools for you to use without taking your fingers off of your keyboard! It uses special symbols to denote the kind of formatting to use.</p>
+<p>These are the ones you would likely use most often:</p>
+<ul>
+<li>Italics are denoted with a single <code>*</code> and bolded words are highlighted with two.<br />
+</li>
+<li>To make a link within the text (mostly for HTML pages), the words that the reader can click on will be contained in square brackets, [], and the web address will be contained in curved brackets, ().<br />
+</li>
+<li>To divide your text into sections, you can use the <code>#</code> symbol to create section headers. The more you use in one line, the further into the hierarchy the section headers will be.</li>
+<li>To insert an image, you use the symbols <code>![](path/to/image.jpg)</code>. Inside the square brackets, you can include settings for your image like width and height.</li>
+<li>Math equations can be inserted by wrapping the LaTeX mathematics typesetting code with <code>$</code>’s.</li>
+</ul>
+<p>For a more complete list of options, check out the first page of the <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference</a> from RStudio.</p>
+</div>
+<div id="including-code" class="section level1">
+<h1>Including Code</h1>
+<p>The most important reason to use R Markdown rather than any other typesetting program is that it is capable of running R within your documents! When building the PDF or HTML version of the document, R will run the code you have included and provide the proper output; images, values, tables, and all! It doesn’t even have to be R code! In RStudio, there is an “Insert” button in the text editor window that includes options for Python, SQL, and plain Base language, just to name a few. Choosing one of these options will result in a code chunk being inserted into your document that looks like this:</p>
+<pre class="markdown"><code>```{r label}
+#code to run
+```</code></pre>
+<p>You can insert the exact same code that you would normally put into R and it <em>should</em> run the same way. Being honest, there might be a few errors that have to do with continuity within your document. Double check that everything you need is defined properly!</p>
+<p>Code chunks themselves have a lot of options to control how the output is displayed as well as the chunk itself. These are listed after the label of the R chunk, separated by commas. The ones I use most often are as follows:</p>
+<ul>
+<li><code>eval</code>: Controls whether the code is run at all when the document is built.</li>
+<li><code>include</code>: Sets whether the code chun itself is displayed in the document. Normally this is automatically set to <code>FALSE</code>.</li>
+<li><code>message</code>: Determines if any messages from the code will be displayed in the document. I would recommend setting this to <code>FALSE</code> if you have a lot of warnings, but your code still runs properly.</li>
+<li><code>cache</code>: Definitely set this to <code>TRUE</code>! This will keep track of the results of code that has been run so that it doesn’t need to run it again everytime you build your document.</li>
+</ul>
+</div>
+<p>Now that you know a few of the basics of RMarkdown, you can start making your own beautiful documents to record all of your experiments with the magic of coding!</p>
+</div>
