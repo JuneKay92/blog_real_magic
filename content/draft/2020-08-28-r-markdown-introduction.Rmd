@@ -1,0 +1,18 @@
+---
+title: R Markdown Introduction
+author: Hope Snyder
+date: '2020-08-28'
+slug: r-markdown-introduction
+categories:
+  - R Packages
+  - How To
+tags:
+  - beginner
+  - about
+  - Rmarkdown
+  - R
+  - publishing
+description: ''
+publishDate: '2020-08-28T14:11:56-05:00'
+images: []
+---

@@ -17,33 +17,73 @@ images: []
 
 
 
+<p>This is where the fun begins! And it’s possibly the hardest part… It can be a little nerveracking and stressful, wanting it all to go smoothly. Consider this like making a recipe you never have before. You gather up all of the ingredients, make sure you have all the right tools, then combine them in a certain way to make something fabulous. Along the way you might find that the chocolate isn’t melting properly and you’ve used the entire package or you need a food processor and the closest thing you have is a haammer and a plastic bag. All of that is frustrating, but it’s a learning experience for the next time you make it. This is the start of your coding adventure (at least in R). It’ll be rough at first, but practice makes perfect!</p>
 <div id="first-things-first-installation" class="section level1">
 <h1>First Things First: Installation</h1>
-<ul>
-<li>“getting out the ingredients”</li>
-<li>where to go</li>
-<li>what order</li>
-<li>important little details (like systme paths)</li>
-</ul>
+<p>This is the “collecting the right tools” step. These are the tools I’ve found most helpful when it comes to working in R. Other options do exist, but I’ve found that my workflow is the best with these tools.</p>
+<p>What you need:</p>
+<ol style="list-style-type: decimal">
+<li>Some sort of LaTeX processor/editor software. This will be helpful when you create documents in R (see below). Each operating system has its own requirements but you can find the details <a href="https://www.latex-tutorial.com/installation/">here</a>. With LaTeX, a text editor for the program would be helpful for just in case situations. I recommend <a href="https://www.xm1math.net/texmaker/">TeXMaker</a>.</li>
+<li><a href="https://www.r-project.org/">R</a>, of course! The R Project website might look a little archaic, but it holds everything you need to get R installed. How to get to what you need:
+<ol style="list-style-type: lower-alpha">
+<li>Click on the “download R” link under Getting Started</li>
+<li>Choose a mirror; the cloud link will choose for you</li>
+<li>Choose te link for your operating system</li>
+</ol></li>
+<li><a href="https://rstudio.com/products/rstudio/download/">RStudio</a> is the best user interface software I have found for R. It has a lot of great features that will help you keep track of everything related to your code.</li>
+</ol>
+<p>Hopefully before you start downloading and installing things, I put these programs in an order on purpose. Sometimes, R has problems communicating with the LaTeX programs if they are installed after R. To avoid those later down the line, I would recommend installing that program first.</p>
+</div>
+<div id="where-to-begin" class="section level1">
+<h1>Where to Begin?</h1>
+<p>Hooray! If all the magic installations worked you should have a working version of R. I recommend using the RStudio interface while you work with R. It contains lots of information about the code you are working on, such as what is in memory and what code has been run previously. It also allows for customization the interface under the Global Options. You can decide how the windows are positioned and the appearance of the code.</p>
+<p>Once you have your interface set up the way you want it, it’s time to start coding! In RStudio, you can type into either the Console or the Text Editor window. While on a line of code, you can hit <code>Ctrl + Enter</code> to run that piece of your code. You can use R as a basic calulator and as a programming language. Let’s go through a small example to get you started.</p>
+<p>R comes with a few data sets all ready installed. The one I like to use for examples is <code>mtcars</code>. If you type that into the console and hit <code>Enter</code> (run the code), R will print out the entire data set. It has information about various vehicles and their miles per gallon. We can get more detail about the variables by using the function <code>help()</code>. The details appear in the Help window in RStudio. Let’s plot the miles per gallon against the weight of the car.</p>
+<pre class="r"><code># First, call the data.  (Note, the # creates comments in your code.  These lines will not be run.)
+dat &lt;- mtcars
+
+# Next, I am going to rename the variables that we are interested in.
+# You can call a specific column in a data table using data$name
+miles_gallon &lt;- dat$mpg
+weight &lt;- dat$wt
+
+# Because weight is listed in tons, let&#39;s transform it so we can see the weight in pounds
+weight &lt;- weight*1000
+
+# Now to plot the variables against each other with the X variable listed first.
+plot(weight, miles_gallon)</code></pre>
+<p><img src="/draft/2020-08-11-an-r-introduction_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Congrats! You have just run your first piece of code in R! It all gets better from here!</p>
 </div>
 <div id="what-should-i-do-next" class="section level1">
 <h1>What Should I Do Next?</h1>
+<p>The heart of R lies in its packages. Packages are a collection of functions and datasets that can be added to R. The packages are often written by other R users to make some task or calculation easier to do within R. If there is something you want to do in R, it is very likely that someone out there has written a package to do exactly that. The packages include documentation and tests to show how to use the functions within each package.</p>
+<p>Many are available to be installed from <a href="https://cran.r-project.org/">CRAN</a>, the same place you found R. You can install new packages by using the function <code>install.packages()</code>. A few others can be downloaded from GitHub. Be warned! Those are likely still in development and can be filled with bugs. These require another package to download. You can download from GitHub using the following code:</p>
+<pre class="r"><code>library(devtools)
+install_github(name_of_developer/name_of_package)</code></pre>
+<p>There are so many good packages out there to use within R. Here are a few of my favorites and ones I think are a good place to start.</p>
 <ul>
-<li>some good packages to install</li>
-<li>basic coding (gotta find a fun example)</li>
+<li><code>tidyverse</code>: This is a collection of packages that help with the readability of your code. There is a bit of a debate about whether or not to use this collection, but these packages include a lot of wonderful functions for data manipulation.</li>
+<li><code>devtools</code>: To help with programming and writing packages of your own in R</li>
+<li><code>ggplot2</code>: This will make your plots look amazing!</li>
+<li><code>usethis</code>: Automates repetitive tasks during project set up and development.</li>
+<li><code>lubridate</code>: Makes working with dates <em>so</em> much easier</li>
+<li><code>rmarkdown</code>: This will help with formatting when you make documents within R</li>
+<li><code>shiny</code>: For making interactive applications within R</li>
 </ul>
 </div>
 <div id="writing-and-document-creation" class="section level1">
 <h1>Writing and Document Creation</h1>
-<ul>
-<li>minimal intro to markdown</li>
-<li>should be short, all the coding bits are the same as last group</li>
-</ul>
+<p>One potential new file that you can create in RStudio is a R Markdown file. This allows you to create PDF, HTML, or even a Word document. You can select this option when you create the file. In fact, these blog posts are all written in R Markdown files!</p>
+<p>The file should start with a header that defines some key characteristics of your file. There are many options to choose from. As a few examples the css to use for style, how to number your section headers and including a table of contents. Like many other things that can be done using R, it is completely customizable. For a more complete list of options, check out the last page of this <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference</a> from RStudio.</p>
+<p>Once you have that set up, you are ready to start creating your document. Markdown comes with a set of formatting tools fo you to use without taking your fingers off of your keyboard. I’ll go over a few of the ones you would likely use most often. Italics are denoted with a single <code>*</code> and bolded words are highlighted with two. To make a link within the text (mostly for HTML pages), the words that the reader can click on will be contatined in square brackets, [], and the web address will be contained in curved brackets, (). To divide your text into sections, you can use the <code>#</code> symbol to create section headers. The more you use in one line, the further into the hierarchy the section headers will be.</p>
+<p>Finally, the most important reason to use R Markdown rather than any other typesetting program is that it is capable of running R within your documents! When building the PDF or HTML version of the document, R will run the code you have included and provide the proper output; images, values, tables, and all! It doesn’t even have to be R code! In RStudio, there is an “Insert” button in the text editor window that includes options for Python, SQL, and plain Base language, just to name a few. Choosing one of these options will result in a code chunk being inserted into your document that looks like this:</p>
+<pre class="markdown"><code>```{r label}
+#code to run
+```</code></pre>
+<p>You can insert the exact same code that you would normally put into R and it <em>should</em> run the same way. Being honest, there might be a few errors that have to do with continuity within your document. Double check that everything you need is defined properly!</p>
 </div>
 <div id="back-to-school" class="section level1">
 <h1>Back to School</h1>
-<ul>
-<li>welcome</li>
-<li>be safe</li>
-</ul>
+<p>Many of you may be going back to school soon, if you haven’t already. Hopefully this little guide will help you get started with R just in time to start a new year of learning. There are so many things that R can do and it can help with more than just math! Lastly, these are strange times we are living in right now. Stay safe!</p>
 </div>
