@@ -3,3 +3,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+pre {
+  background-color: #F0EFFF;
+  border-style: none;
+  display: block;
+  padding: 20px;
+}
+
+code {
+  background-color: #F0EFFF;
+  border-style: none;
+  display: inline;
+}

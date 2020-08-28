@@ -208,7 +208,8 @@
 .card {
 	margin-bottom: 1.75rem;
 	margin-left: 15rem;
-	max-width: 900px;
+	margin-right: 15rem;
+	max-width: 600px;
 	text-justify: distribute;
 	width: 70%;
 }
