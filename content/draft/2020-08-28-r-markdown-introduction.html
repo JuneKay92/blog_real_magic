@@ -1,5 +1,5 @@
 ---
-title: R Markdown Introduction
+title: 'How Is It Made: R Markdown'
 author: Hope Snyder
 date: '2020-08-28'
 slug: r-markdown-introduction
@@ -12,11 +12,54 @@ tags:
   - Rmarkdown
   - R
   - publishing
-description: ''
+description: 'A document that has the text, code, and results all in one? Yes, please!'
 publishDate: '2020-08-28T14:11:56-05:00'
 images: []
 ---
 
 
 
-
+<p>One potential new file that you can create in RStudio is a R Markdown file. This allows you to create PDF, HTML, or even a Word document. It can also go beyond just text documents. You can also create presentation slides, books, dashboards, and vignettes with R markdown files. In fact, these blog posts are all written in R Markdown files!</p>
+<p><img src="https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif" /></p>
+<div id="creating-the-document" class="section level1">
+<h1>Creating the Document</h1>
+<p>You can select R Markdown when you create a new file. If you are typing in a plain text file, you can save it with “.Rmd” as the file type.</p>
+<p>The file should start with a header that defines some key characteristics of your file. It should look something like this:</p>
+<pre class="markdown"><code>---
+title: &quot;Book of Shadows&quot;
+author: &quot;Bridget Bishop&quot;
+date: &quot;8/28/2020&quot;
+output: pdf_document
+---</code></pre>
+<p>There are many options to update the format of the document you produce. A few examples are the css to use for style, how to number your section headers and including a table of contents. Like many other things that can be done using R, it is completely customizable. It is important to insert white space into the header properly. Some parts, like the formatting, will be tabbed over, others will not be. The header then will then look something like this:</p>
+<pre class="markdown"><code>---
+title: &quot;Book of Shadows&quot;
+author: &quot;Bridget Bishop&quot;
+date: &quot;8/28/2020&quot;
+output: 
+  pdf_document:
+    toc: true
+    number_section: true
+    css: &quot;style.css&quot;
+---</code></pre>
+<p>For a more complete list of options, check out the last page of this <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference</a> from RStudio.</p>
+</div>
+<div id="markdown-language" class="section level1">
+<h1>Markdown Language</h1>
+<p>Once you have the header set up, you are ready to start creating your document. You can start writing right away! In order to get formatting like italics and inserting pictures, you need to use the markdown language. Don’t worry! It’s not <em>another</em> coding language you need to learn. Markdown is a set of formatting tools for you to use without taking your fingers off of your keyboard! It uses special symbols to denote the kind of formatting to use.</p>
+<p>These are the ones you would likely use most often:<br />
+- Italics are denoted with a single <code>*</code> and bolded words are highlighted with two.<br />
+- To make a link within the text (mostly for HTML pages), the words that the reader can click on will be contatined in square brackets, [], and the web address will be contained in curved brackets, ().<br />
+- To divide your text into sections, you can use the <code>#</code> symbol to create section headers. The more you use in one line, the further into the hierarchy the section headers will be.
+- To insert an image, you use the symbols <code>![](path/to/image.jpg)</code>. Inside the squar brackets, you can include settings for your image like width and height.
+- Math equations can be inserted by wrapping the LaTeX mathematics typesetting code with <code>$</code>’s.</p>
+<p>For a more complete list of options, check out the first page of the <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference</a> from RStudio.</p>
+</div>
+<div id="including-code" class="section level1">
+<h1>Including Code</h1>
+<p>The most important reason to use R Markdown rather than any other typesetting program is that it is capable of running R within your documents! When building the PDF or HTML version of the document, R will run the code you have included and provide the proper output; images, values, tables, and all! It doesn’t even have to be R code! In RStudio, there is an “Insert” button in the text editor window that includes options for Python, SQL, and plain Base language, just to name a few. Choosing one of these options will result in a code chunk being inserted into your document that looks like this:</p>
+<pre class="markdown"><code>```{r label}
+#code to run
+```</code></pre>
+<p>You can insert the exact same code that you would normally put into R and it <em>should</em> run the same way. Being honest, there might be a few errors that have to do with continuity within your document. Double check that everything you need is defined properly!</p>
+</div>
