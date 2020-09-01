@@ -1,0 +1,33 @@
+---
+title: 'The heart of R: Functions'
+author: Hope Snyder
+date: '2020-08-31'
+slug: the-heart-of-r-functions
+categories:
+  - How To
+tags:
+  - beginner
+  - R
+  - code
+description: ''
+publishDate: '2020-08-31T14:39:08-05:00'
+images: []
+---
+
+# What are functions?
+
+- function definitions
+- parts of a function
+- when to use functions
+- where are the used
+
+# Simple Examples
+
+- example funciton
+- applications
+
+# A Little Bit More
+
+- more advanced topics
+- nesting functions
+- iterating functions

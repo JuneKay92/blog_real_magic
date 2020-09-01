@@ -1,0 +1,36 @@
+---
+title: Let's Get GIT Going
+author: Hope Snyder
+date: '2020-08-31'
+slug: let-s-get-git-going
+categories:
+  - How To
+  - Cloud Storage
+tags:
+  - about
+  - beginner
+  - code
+  - GIT
+description: ''
+publishDate: '2020-08-31T16:56:00-05:00'
+images: []
+---
+
+Happy GIT with R reordered
+
+# Using the Cloud
+
+- GIT and GITHub
+- other options (bitbucket)
+- cloud storage and version control
+
+# GIT Alone
+
+- set up: install, ssh keys, cloning a repository
+- common commands
+
+# GIT and R
+
+- communication
+- setting up passwords and such
+- basic interactions

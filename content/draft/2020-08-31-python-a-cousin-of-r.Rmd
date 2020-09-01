@@ -1,0 +1,38 @@
+---
+title: 'Python: A cousin of R'
+author: Hope Snyder
+date: '2020-08-31'
+slug: python-a-cousin-of-r
+categories:
+  - Python
+tags:
+  - python
+  - beginner
+  - intro
+description: ''
+publishDate: '2020-08-31T14:26:04-05:00'
+images: []
+---
+
+what is python?
+
+# First Things First: Installation
+
+- anaconda3 (spyder)
+- other options (jupyter notebooks)
+- note that it includes an R instance but it's a bit behind the times
+
+# Where to Begin
+
+- basics of python code
+- the programs I started with
+- random number generator, mad libs
+
+
+# Compare and Contrast
+
+- python good: user interface wasy to implement; a little like Java coding
+- python bad: coding was the challenge; packages don't have easy access to documentation or saying what functions are included
+- R good: easy documentation access; open community super willing to help with any problem
+- R bad: package quality can be imperfect; iffy memory management
+- honestly find ways to use them in conjunction with each other, leveraging both to their advantages
