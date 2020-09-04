@@ -30,7 +30,7 @@ CSS stands for Cascading Style Sheet.  With CSS, you are able to beautify your d
 
 CSS applies style changes globally so you don't have to worry about making changes on an individual level.  So if something doesn't look the way you want it to in your document, you can change it in one place and it is applied everywhere.  It keeps things consistent.
 
-As I stated earlier, the challenge with CSS is figuring out how it comunicates with HTML.  The basic version is that CSS defines specific styles for each element in an HTML document.  The style sheet will be a series of code chunks that look like this:
+As I stated earlier, the challenge with CSS is figuring out how it communicates with HTML.  The basic version is that CSS defines specific styles for each element in an HTML document.  The style sheet will be a series of code chunks that look like this:
 
 ```markdown
 element{
