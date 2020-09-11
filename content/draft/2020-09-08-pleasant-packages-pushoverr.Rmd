@@ -1,0 +1,38 @@
+---
+title: 'Pleasant Packages: pushoverr'
+author: Hope Snyder
+date: '2020-09-08'
+slug: pleasant-packages-pushoverr
+categories:
+  - R Packages
+  - How To
+tags:
+  - code
+  - fun
+  - shiny
+description: ''
+publishDate: '2020-09-08T16:33:58-05:00'
+images: []
+---
+
+# What You Need
+
+- Pushover account (free for 7 days then a one time $5 cost)
+- Pushover app on phone
+- install the `pushoverr` package
+
+# The First Spell
+
+- need the user and api token/key
+- extra arguments to add other things to phone message
+
+# Adding a Little Urgency
+
+- other funtions in the pushoverr package
+- quiet, high priority, and emergency
+- limitations
+
+# Other Options
+
+- NotifyR (still uses pushoverr)
+- RPushbullet (might be free)
