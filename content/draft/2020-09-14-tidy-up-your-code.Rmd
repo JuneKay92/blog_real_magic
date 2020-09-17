@@ -1,0 +1,37 @@
+---
+title: Tidy Up Your Code
+author: Hope Snyder
+date: '2020-09-14'
+slug: tidy-up-your-code
+categories:
+  - About
+  - R Packages
+tags:
+  - about
+  - R
+  - code
+  - format
+description: ''
+publishDate: '2020-09-14T15:04:29-05:00'
+images: []
+---
+
+what is the tidy verse
+
+# General formating tips in R
+
+- white space doesn't matter, but makes it look better
+- defining objects with arrow not equal sign, equal is for function arguments
+- commenting and making sections
+
+# What is the tidyverse?
+
+- base packages: dplyr, ggplot2, lubridate
+- what are pipes?
+- how does it change the formatting
+
+# BaseR vs TidyR
+
+- the debate highlights
+- Which is better? depends baseR for learning, tidy for tidying
+- whatever works for you and whatever people can read and understand
