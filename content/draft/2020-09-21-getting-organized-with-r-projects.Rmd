@@ -1,0 +1,33 @@
+---
+title: Getting Organized with R Projects
+author: Hope Snyder
+date: '2020-09-21'
+slug: getting-organized-with-r-projects
+categories:
+  - About
+  - How To
+tags:
+  - beginner
+  - R
+  - organization
+  - project
+  - publishing
+description: ''
+publishDate: '2020-09-21T14:18:08-05:00'
+images: []
+---
+
+# What is an R project
+
+- collection of files
+- a way to remember where you were
+- muliple windows for each project
+- makes path names easy
+
+# When should I use this?
+
+- you have a project that will include lots of files
+- have multiple projects you are working on
+- easy to share with other people (via GIT)
+
+# 

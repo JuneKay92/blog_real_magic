@@ -1,0 +1,35 @@
+---
+title: Automatic Task Making
+author: Hope Snyder
+date: '2020-09-30'
+slug: automatic-task-making
+categories:
+  - R Packages
+  - How To
+tags:
+  - code
+  - automation
+  - fun
+  - organization
+  - package
+  - R
+description: ''
+publishDate: '2020-09-30T14:37:32-05:00'
+images: []
+---
+
+
+
+<div id="automated-tasks" class="section level3">
+<h3>Automated tasks</h3>
+<p>Setting up automated tasks for Windows only!: (<a href="https://cran.r-project.org/web/packages/taskscheduleR/index.html">taskscheduleR</a>)</p>
+<pre class="r"><code>### Need two files.  One for the code to run and one for setting up and running the tasks
+# my_scheduler
+the_time &lt;- Sys.time()
+print(the_time)
+# task_setup
+taskscheduler_create(taskname = &quot;myfancyscript2&quot;, rscript = &quot;C:/Users/hopesnyder/Desktop/scheduling/my_scheduler.R&quot;, 
+                     schedule = &quot;ONCE&quot;)
+# task_run
+taskscheduler_runnow(taskname = &quot;testing&quot;)</code></pre>
+</div>

@@ -1,0 +1,35 @@
+---
+title: 'Pleasant Packages: purrr'
+author: Hope Snyder
+date: '2020-09-28'
+slug: pleasant-packages-purrr
+categories:
+  - How To
+  - R Packages
+tags:
+  - code
+  - package
+  - R
+  - iteration
+description: ''
+publishDate: '2020-09-28T15:43:46-05:00'
+images: []
+---
+
+Soft Kitty Poem!
+
+# What is Purrr?
+- functions and tables review
+- applying a function using the values in the table
+- basics of the common functions
+- popular funcitons
+
+# Example
+- making a table and a function
+- using purrr and getting the output
+- for loop version?
+
+# What is Furrr?
+- differences between purrr and furrr
+- what does furr do?
+- similarities in the functions/ how to update a purrr function to a furrr funciton
