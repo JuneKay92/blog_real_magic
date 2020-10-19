@@ -1,0 +1,33 @@
+---
+title: 'R Basics: Plots'
+author: Hope Snyder
+date: '2020-10-19'
+slug: r-basics-plots
+categories:
+  - How To
+  - R Packages
+tags:
+  - beginner
+  - code
+  - R
+  - plot
+  - statistics
+description: ''
+publishDate: '2020-10-19T15:48:34-05:00'
+images: []
+---
+
+# Basic Spells and Ingredients
+
+- where we left off
+- what stats I'll cover
+- data that we'll use
+
+# Frequency Plots
+
+- barplot, histogram, boxplot, dotplot, scatterplot
+
+# Testing Plots
+
+- line plot, qq plot, density plot, correlation plot
+

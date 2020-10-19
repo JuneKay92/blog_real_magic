@@ -1,7 +1,7 @@
 ---
 title: Automatic Task Making
 author: Hope Snyder
-date: '2020-09-30'
+date: '2020-10-23'
 slug: automatic-task-making
 categories:
   - R Packages
@@ -13,16 +13,31 @@ tags:
   - organization
   - package
   - R
-description: ''
+description: 'Is there a something you want R to repeatedly do? Set up a task that will automatically be run by R! (Only for Windows, unfortunately)'
 publishDate: '2020-09-30T14:37:32-05:00'
 images: []
 ---
 
 
 
-<div id="automated-tasks" class="section level3">
-<h3>Automated tasks</h3>
-<p>Setting up automated tasks for Windows only!: (<a href="https://cran.r-project.org/web/packages/taskscheduleR/index.html">taskscheduleR</a>)</p>
+<div id="taskscheduler-package" class="section level2">
+<h2><code>taskscheduleR</code> package</h2>
+<ul>
+<li>what is it?</li>
+<li>only works on windows! other options for mac and linux but I mostly work on windows so I don’t know how</li>
+</ul>
+</div>
+<div id="how-does-it-work" class="section level2">
+<h2>How does it work?</h2>
+<ul>
+<li>create a script to be run through Rscript</li>
+<li>what is rscript?</li>
+<li>how often to scedule?</li>
+<li>output is in same file as scripts (another reason for projects!)</li>
+</ul>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
 <pre class="r"><code>### Need two files.  One for the code to run and one for setting up and running the tasks
 # my_scheduler
 the_time &lt;- Sys.time()

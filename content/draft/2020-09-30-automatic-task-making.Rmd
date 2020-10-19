@@ -1,7 +1,7 @@
 ---
 title: Automatic Task Making
 author: Hope Snyder
-date: '2020-09-30'
+date: '2020-10-23'
 slug: automatic-task-making
 categories:
   - R Packages
@@ -13,14 +13,24 @@ tags:
   - organization
   - package
   - R
-description: ''
+description: 'Is there a something you want R to repeatedly do? Set up a task that will automatically be run by R! (Only for Windows, unfortunately)'
 publishDate: '2020-09-30T14:37:32-05:00'
 images: []
 ---
 
+## `taskscheduleR` package
 
-### Automated tasks
-Setting up automated tasks for Windows only!: ([taskscheduleR](https://cran.r-project.org/web/packages/taskscheduleR/index.html))
+- what is it?
+- only works on windows!  other options for mac and linux but I mostly work on windows so I don't know how
+
+## How does it work?
+
+- create a script to be run through Rscript
+- what is rscript?
+- how often to scedule?
+- output is in same file as scripts (another reason for projects!)
+
+## Example
 
 ```{r, eval = FALSE, cache = TRUE}
 ### Need two files.  One for the code to run and one for setting up and running the tasks
