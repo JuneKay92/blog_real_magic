@@ -1,0 +1,33 @@
+---
+title: 'How is it Made: Bookdown'
+author: Hope Snyder
+date: '2020-10-12'
+slug: how-is-it-made-bookdown
+categories:
+  - About
+  - R Packages
+tags:
+  - beginner
+  - bookdown
+  - publishing
+  - R
+  - Rmarkdown
+description: ''
+publishDate: '2020-10-12T16:58:04-05:00'
+images: []
+---
+
+- examples are the books I used as references from other posts
+- why make a book?
+
+# Basic Recipe
+
+- how to get started
+- set up and formatting
+- how to create the book AND/OR post online(?)
+
+# Adding the Details
+
+- chapters
+- table of contents, sections
+- referencing chapters in another section
