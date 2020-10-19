@@ -1,0 +1,51 @@
+---
+title: Getting Going with GIT
+author: Hope Snyder
+date: '2020-10-09'
+slug: getting-going-with-git
+categories:
+  - Cloud Storage
+  - How To
+tags:
+  - intermediate
+  - GIT
+  - code
+description: 'We have already talked about how to get an interface for working with GIT set up.  Now we are ready to talk about working with GIT.'
+publishDate: '2020-10-05T16:01:15-05:00'
+images: []
+---
+
+
+
+<p><a href="https://realmagic.netlify.app/posts/let-s-get-git-going/">Last time</a>, we talked about version control and one program to help you do that: GIT. GIT is an open source version control system that utilizes the cloud for storage. We talked through how to install GIT as well as making sure its communicating with R properly. We did this with the help of Jenny Bryan’s book, <a href="https://happygitwithr.com/">Happy GIT with R</a>. But we ran out of time to talk about how to actually use GIT. Let’s get to it!</p>
+<div id="common-commands" class="section level1">
+<h1>Common Commands</h1>
+<p>GIT is used through the command line (Terminal on Mac, Command Prompt or GIT Bash on Windows). The first thing you need to do to work with GIT, you need to navigate to the repository that is monitored by GIT. I have a folder on my computer called GIT that I store all of my project repositories in. That way I always go to the same place and know when I am able to use GIT commands: It must have “GIT” somewhere in the working directory.</p>
+<p>Once you have made it to the repository within the command line, you are able to use GIT commands. To use GIT commands, you need to start the command with <code>git</code> followed by the command. The <code>help</code> command with give you a list of possible commands you can use with a short description of what the command does. However, here is a list of the commands you will use most often.</p>
+<ul>
+<li><p><code>git status</code>: Show everything in the repository that has been changed. It will highlight was changes have been staged for pushing to the cloud and which have not. It never hurts to check before you finish for the day.</p></li>
+<li><p><code>git commit</code>: Records all of the changes in the file and prepares that version for storing in the cloud. You must commit files in order for them to be moved to the cloud version control system.</p></li>
+<li><p><code>git push</code>/<code>git pull</code>: Pushing updates the changes you have made to the online repository. Pulling gets the updates from online for your computer copy.</p></li>
+</ul>
+<p>These common commands have been integrated into the RStudio interface. In the Environment pane (it defaults to the upper right side), there is a GIT tab for projects that are set up to be monitored by GIT. In this pane, there are buttons for committing, pushing, and pulling. The main window gives the status for the repository. This pane allows you to avoid working in the command line for the most part. I have noticed that this interface has issues with larger files and large commits. Those are better done through the command line.</p>
+<p><img src="/image/git_pane.png" width=500 class="center"/></p>
+</div>
+<div id="working-in-branches" class="section level1">
+<h1>Working in Branches</h1>
+<p>Let’s make things a little bit more complicated. Projects that are constantly being updated and improved. However, when you start adding a new feature, you don’t want to edit the public working version. Rather you want to work on the new features in a branch. A branch is essentially a copy of the repository that you can work on and save to without overwriting the already working, public version.</p>
+<p>To create a new branch in the command line, use the command <code>git branch [branch_name]</code>. Then, to move into the branch, use <code>git checkout [branch_name]</code>. Finally, push the branch to the cloud storage so it will keep track of this branch as well using <code>git push origin [branch]</code>. Now you can work and commit to this branch as normal. When you are ready to add the new feature to the public version of the project, you move into the master branch, <code>git checkout master</code>, then merge the two branches together, <code>git merge [branch]</code>. Now your master branch should have the new feature that you have been working on.</p>
+</div>
+<div id="workflow-example" class="section level1">
+<h1>Workflow Example</h1>
+<p>Now that we’ve gone over the commands you will use the most often, I will talk through a typical workflow.</p>
+<ol style="list-style-type: decimal">
+<li>Pull down any changes from the last time you worked. This will get all the changes from your collaborators or from other machines you may have completed work on.<br />
+</li>
+<li>Move into the branch that currently has the new feature being worked on.</li>
+<li>Work and create files as you would normally.</li>
+<li>Commit the files to be remembered and tracked by GIT version control.</li>
+<li>Push up your changes to the cloud storage and they will be stored under the branch you were working in. This is very important to do so you don’t end up with incompatible versions and everything is up to date!</li>
+<li>If you want to merge the working branch with the master branch, run the merge command. Then commit and push that change to the cloud storage.</li>
+</ol>
+<p><img src="/image/flying_witch.jpg" width=500 class="center"/></p>
+</div>
