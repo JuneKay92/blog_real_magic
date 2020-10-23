@@ -22,7 +22,7 @@ First, this package only works on Windows machines, unfortunately.  There is a w
 
 The `taskscheduleR` package allows you to set up "tasks" to run automatically on your PC.  These tasks can be any R code that you need to repeatedly.  It doesn't even have to be a necessity, it could be just because you would like to!  For example, you want to know exactly what time you start working every morning.  You can set up a script that will log the time when you log on to your computer.  Or once a month, you can update a record of the number of kitten adoptions at your local shelter.  This is also achievable with `taskscheduleR`!  Tasks being done on their own; is there a better example of real life magic?
 
-<img src="http://delightfuldisney.tumblr.com/page/16" width=500 class="center"/>
+<img src="https://25.media.tumblr.com/30c99cf55c832876a30f3dd6df922de9/tumblr_mgp6ds11Q01rm5w4eo1_400.gif" width=500 class="center"/>
 
 
 ## Let's Make Some Magic!
