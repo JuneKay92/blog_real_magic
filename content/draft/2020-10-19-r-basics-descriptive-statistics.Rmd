@@ -11,25 +11,77 @@ tags:
   - fun
   - R
   - statistics
-description: ''
+description: 'You have to start somewhere!'
 publishDate: '2020-10-19T15:40:45-05:00'
 images: []
 ---
 
-# Basic Spells and Ingredients
+When learning a new hobby or skill, I often want to jump right into the exciting and flashy things even though they are beyond beginner level.  I have realized that sometimes it happens when I'm sharing the information about a skill that I am passionate about.  However, before you can run, you need to learn how to walk.  So today, I am going to finally go over a few of the basic spells and ingredients in R.
 
-- what stats I'll cover
-- data that we'll use
+For these examples, I will use the `mtcars` dataset that comes with R when you install it.  Here, I am going to cover most of the basic descriptive statistics.  Note, that in order to get access to just a single column or variable in data sets in R you use the `$` symbol.  For example, to get only the values of the mpg variable from the `mtcars` dataset, use the code `mtcars$mpg`.
 
 # Measures of the Middle
 
-- mean, median, mode
-- frequency, cross tabs
-- decriptives
+First, we will look at some measures of the center of the data.  These statistics tell you something about the average of your data, or what value is likely to be seen the most often.
+
+## Mean and Median
+
+The great thing about R is most of the functions are named exactly what you want to do.  For the measures of central tendency, the functions are `mean()`and `median()`.  However, the mode does not have a built in function in R.  If you want to get this, you will need to make your own function (Need help? See [here](https://realmagic.netlify.app/posts/the-heart-of-r-functions/)!).
+
+```{r}
+mean(mtcars$mpg)
+
+median(mtcars$mpg)
+```
+
+## Frequency Tables
+
+For this function, you will need an extra package called the `summarytools` package.  This package has quite a few nice functions for showing the descriptive statitics.  For frequency tables, the function `freq()` will tell you about frequencies, proprtions, and information about missing data.
+
+```{r}
+library(summarytools)
+freq(mtcars$gear)
+```
 
 # Measures of the Spread
 
-- min, max, range
-- quartiles
-- standard deviation, variance
+Now we will look at some measure of dispersion within the data.  Sometimes it is good to look at how much the data varies.  It may reveal some outliers within your data.  
 
+## Range
+
+The range of the data can be given by a few different functions in R.  The `range()` function gives you the minimum and maximum together as a vector.  Alternatively, you can use `min()` and `max()` to get the values separately.
+
+```{r}
+range(mtcars$mpg)
+```
+
+## Quantiles
+
+Quantiles and quartiles are all found the same way in R.  The function used is `quantile()` and it has two arguments.  The first is the data vector and the second is the percentile you would like computed.
+
+```{r}
+quantile(mtcars$mpg, .25)
+
+quantile(mtcars$mpg, .87)
+```
+
+## Summary Function
+
+R has a few convienience functions that will allow you to compute many of these descriptive statistics all at once.  The `summary()` function is built in to R and will give the minimum, maximum, first and third quartile, median, and mean for every variable in your dataset.
+
+```{r}
+summary(mtcars)
+```
+
+## Variance
+
+The final measures of dispertion are standard deviation and variance.  These function names are abbreviated in R, using `sd()` and `var()` respectively.  Note, in R these measures are always computed as if the data is a sample.  
+
+```{r}
+sd(mtcars$mpg)
+
+var(mtcars$mpg)
+```
+
+</div>
+There are obviously more basics to go over in R. Join me next week for some basics about plots in R.

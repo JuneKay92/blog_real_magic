@@ -11,33 +11,102 @@ tags:
   - fun
   - R
   - statistics
-description: ''
+description: 'You have to start somewhere!'
 publishDate: '2020-10-19T15:40:45-05:00'
 images: []
 ---
 
 
 
-<div id="basic-spells-and-ingredients" class="section level1">
-<h1>Basic Spells and Ingredients</h1>
-<ul>
-<li>what stats I’ll cover</li>
-<li>data that we’ll use</li>
-</ul>
-</div>
+<p>When learning a new hobby or skill, I often want to jump right into the exciting and flashy things even though they are beyond beginner level. I have realized that sometimes it happens when I’m sharing the information about a skill that I am passionate about. However, before you can run, you need to learn how to walk. So today, I am going to finally go over a few of the basic spells and ingredients in R.</p>
+<p>For these examples, I will use the <code>mtcars</code> dataset that comes with R when you install it. Here, I am going to cover most of the basic descriptive statistics. Note, that in order to get access to just a single column or variable in data sets in R you use the <code>$</code> symbol. For example, to get only the values of the mpg variable from the <code>mtcars</code> dataset, use the code <code>mtcars$mpg</code>.</p>
 <div id="measures-of-the-middle" class="section level1">
 <h1>Measures of the Middle</h1>
-<ul>
-<li>mean, median, mode</li>
-<li>frequency, cross tabs</li>
-<li>decriptives</li>
-</ul>
+<p>First, we will look at some measures of the center of the data. These statistics tell you something about the average of your data, or what value is likely to be seen the most often.</p>
+<div id="mean-and-median" class="section level2">
+<h2>Mean and Median</h2>
+<p>The great thing about R is most of the functions are named exactly what you want to do. For the measures of central tendency, the functions are <code>mean()</code>and <code>median()</code>. However, the mode does not have a built in function in R. If you want to get this, you will need to make your own function (Need help? See <a href="https://realmagic.netlify.app/posts/the-heart-of-r-functions/">here</a>!).</p>
+<pre class="r"><code>mean(mtcars$mpg)</code></pre>
+<pre><code>## [1] 20.09062</code></pre>
+<pre class="r"><code>median(mtcars$mpg)</code></pre>
+<pre><code>## [1] 19.2</code></pre>
+</div>
+<div id="frequency-tables" class="section level2">
+<h2>Frequency Tables</h2>
+<p>For this function, you will need an extra package called the <code>summarytools</code> package. This package has quite a few nice functions for showing the descriptive statitics. For frequency tables, the function <code>freq()</code> will tell you about frequencies, proprtions, and information about missing data.</p>
+<pre class="r"><code>library(summarytools)</code></pre>
+<pre><code>## Warning: package &#39;summarytools&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;pryr&#39;:
+##   method      from
+##   print.bytes Rcpp</code></pre>
+<pre><code>## For best results, restart R session and update pander using devtools:: or remotes::install_github(&#39;rapporter/pander&#39;)</code></pre>
+<pre class="r"><code>freq(mtcars$gear)</code></pre>
+<pre><code>## Frequencies  
+## mtcars$gear  
+## Type: Numeric  
+## 
+##               Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
+## ----------- ------ --------- -------------- --------- --------------
+##           3     15     46.88          46.88     46.88          46.88
+##           4     12     37.50          84.38     37.50          84.38
+##           5      5     15.62         100.00     15.62         100.00
+##        &lt;NA&gt;      0                               0.00         100.00
+##       Total     32    100.00         100.00    100.00         100.00</code></pre>
+</div>
 </div>
 <div id="measures-of-the-spread" class="section level1">
 <h1>Measures of the Spread</h1>
-<ul>
-<li>min, max, range</li>
-<li>quartiles</li>
-<li>standard deviation, variance</li>
-</ul>
+<p>Now we will look at some measure of dispersion within the data. Sometimes it is good to look at how much the data varies. It may reveal some outliers within your data.</p>
+<div id="range" class="section level2">
+<h2>Range</h2>
+<p>The range of the data can be given by a few different functions in R. The <code>range()</code> function gives you the minimum and maximum together as a vector. Alternatively, you can use <code>min()</code> and <code>max()</code> to get the values separately.</p>
+<pre class="r"><code>range(mtcars$mpg)</code></pre>
+<pre><code>## [1] 10.4 33.9</code></pre>
+</div>
+<div id="quantiles" class="section level2">
+<h2>Quantiles</h2>
+<p>Quantiles and quartiles are all found the same way in R. The function used is <code>quantile()</code> and it has two arguments. The first is the data vector and the second is the percentile you would like computed.</p>
+<pre class="r"><code>quantile(mtcars$mpg, .25)</code></pre>
+<pre><code>##    25% 
+## 15.425</code></pre>
+<pre class="r"><code>quantile(mtcars$mpg, .87)</code></pre>
+<pre><code>##    87% 
+## 27.261</code></pre>
+</div>
+<div id="summary-function" class="section level2">
+<h2>Summary Function</h2>
+<p>R has a few convienience functions that will allow you to compute many of these descriptive statistics all at once. The <code>summary()</code> function is built in to R and will give the minimum, maximum, first and third quartile, median, and mean for every variable in your dataset.</p>
+<pre class="r"><code>summary(mtcars)</code></pre>
+<pre><code>##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000</code></pre>
+</div>
+<div id="variance" class="section level2">
+<h2>Variance</h2>
+<p>The final measures of dispertion are standard deviation and variance. These function names are abbreviated in R, using <code>sd()</code> and <code>var()</code> respectively. Note, in R these measures are always computed as if the data is a sample.</p>
+<pre class="r"><code>sd(mtcars$mpg)</code></pre>
+<pre><code>## [1] 6.026948</code></pre>
+<pre class="r"><code>var(mtcars$mpg)</code></pre>
+<pre><code>## [1] 36.3241</code></pre>
+</div>
+<p>There are obviously more basics to go over in R. Join me next week for some basics about plots in R.</p>
+</div>
 </div>
