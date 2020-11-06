@@ -1,0 +1,60 @@
+---
+title: 'Pleasant Packages: Automatic Tasks with `taskscheduler`'
+author: Hope Snyder
+date: '2020-10-23'
+slug: automatic-task-making
+categories:
+  - R Packages
+  - How To
+tags:
+  - code
+  - automation
+  - fun
+  - organization
+  - package
+  - R
+description: 'Is there a something you want R to repeatedly do? Set up a task that will automatically be run by R! (Only for Windows, unfortunately)'
+publishDate: '2020-09-30T14:37:32-05:00'
+images: []
+---
+
+
+
+<p>First, this package only works on Windows machines, unfortunately. There is a way to set up automatic tasks on Mac and Linux through another package. However, I primarily work on Windows so I am most familiar with the <code>taskscheduleR</code> package.</p>
+<p>The <code>taskscheduleR</code> package allows you to set up “tasks” to run automatically on your PC. These tasks can be any R code that you need to repeatedly. It doesn’t even have to be a necessity, it could be just because you would like to! For example, you want to know exactly what time you start working every morning. You can set up a script that will log the time when you log on to your computer. Or once a month, you can update a record of the number of kitten adoptions at your local shelter. This is also achievable with <code>taskscheduleR</code>! Tasks being done on their own; is there a better example of real life magic?</p>
+<p><img src="https://25.media.tumblr.com/30c99cf55c832876a30f3dd6df922de9/tumblr_mgp6ds11Q01rm5w4eo1_400.gif" width=500 class="center"/></p>
+<div id="lets-make-some-magic" class="section level2">
+<h2>Let’s Make Some Magic!</h2>
+<p>In order to set up a task for your computer to run automatically, make sure you are signed in as an administrator for your machine. The <code>taskscheduleR</code> package communicates with the Windows Task Scheduler to run the tasks. Then, install and load the package:</p>
+<pre class="r"><code>install.packages(&quot;taskscheduleR&quot;)
+library(taskscheduleR)</code></pre>
+<p>Now, you can write code, or an “Rscript” file as the package refers to them, to be run to complete the task. This file can be a regular <code>.R</code> file. It can contain whatever code you want to be run at a specific time or repeatedly. As with many things in R, you are limited only by how much you know how to do.</p>
+<p>The next question you have to answer is “When do you want this code to run and how often?” The package includes many options for this. You could choose to run your automated task by minutes, hours, days, weeks, or months. Also, when you log in to your computer or when the computer goes idle. There is even an option for just one time. More options are available by using the <code>modifier</code> argument.</p>
+<p>The last thing to worry about is where the output of the code ends up. By default the output of the code is saved in a text file in the location of the Rscript. This text file is updated with the new results each time the code is run. This would be another great reason to create a project that holds all of your automated tasks and their outputs (Need help with setting up an R project? <a href="https://realmagic.netlify.app/posts/getting-organized-with-r-projects/">Look here!</a>)!</p>
+</div>
+<div id="let-the-computer-do-magic" class="section level2">
+<h2>Let the Computer Do Magic</h2>
+<p>Now I will talk through an example of a simple task that will pick ten random values between 1 and 100. This task will only run once (since you probably don’t want ten new numbers every few minutes), however there is a way to get it to run again, should you want to.</p>
+<p>First thing to do is set up the Rscript file that you would like to run automatically. It might be best to save this in a separate folder for each task you set up.</p>
+<pre class="r"><code>nums &lt;- sample(100, 10)
+
+print(nums)</code></pre>
+<p>Next, you have technically have two options. Option 1) You could create a file for setting up your tasks. This would include a few lines of code as shown below:</p>
+<pre class="r"><code>taskscheduler_create(taskname = &quot;test_run&quot;, 
+                     rscript = &quot;C:/full/path/to/the/task/rscript.R&quot;, 
+                     schedule = &quot;ONCE&quot;
+                     starttime = format(Sys.time() + 50, &quot;%H:%M&quot;)) </code></pre>
+<p>The <code>starttime</code> argument is optional. It gives a bit of a delay so you might notice when the task is executed. A window that seems like a command line window will appear momentarily. If you see that, it indicates that the task has run. The log should appear in the file with the Rscript used for the task. If it doesn’t, make sure you used the <strong>full path</strong> to the task file. I believe it <em>must</em> be the full path to the Rscript otherwise the task does not run, even if there is an indication that the task was executed.</p>
+<p>If you are setting the task to be reoccuring, you can use the <code>modifier</code> argument to have more control over when the task is run. For example, if you want something done on a biweekly basis, the <code>schedule = WEEKLY</code> and the <code>modifier = 2</code>.</p>
+<p>Or, if you are working in RStudio, you could do Option 2) use the Addin feature to help you set up tasks. This will open a window where you can find your Rscript, set the location where the log will be recorded, as well as designate how often the script is run and when the task will start. Once you fill in those arguments, click on the “Create task” button at the bottom to schedule you automated task.</p>
+<p><img src="/image/auto_task.png" width=500 class="center"/></p>
+<p>Below is a few other functions that will help you when testing and trouble shooting your task and the automation.</p>
+<pre class="r"><code># Run the task again immediately
+taskscheduler_runnow(taskname = &quot;test_run&quot;)
+
+# This will list out all of the tasks in Windows manager.  You might need to filter by the &quot;TaskName&quot; in order to see your task.
+taskscheduler_ls()
+
+# Remove the task from the list.  It will not be run anymore until the task is recreated.
+taskscheduler_delete(taskname = &quot;test_run&quot;)</code></pre>
+</div>
