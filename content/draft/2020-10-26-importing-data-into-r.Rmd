@@ -1,0 +1,46 @@
+---
+title: Importing Data Into R
+author: Hope Snyder
+date: '2020-10-26'
+slug: importing-data-into-r
+categories:
+  - How To
+  - R Packages
+  - Data
+tags:
+  - beginner
+  - code
+  - R
+  - data
+  - about
+description: ''
+publishDate: '2020-10-26T15:46:42-05:00'
+images: []
+---
+
+# How to find it
+
+- working directory: how to get it and how to change it
+
+# Text files
+
+- csv files
+- tidy formatting
+
+# Excel
+
+- csv files
+- readxls package
+- tidy formatting
+
+# SPSS
+
+- foreign package
+- sav files
+- tidy formatting
+
+# SAS
+
+- Hmisc package
+- get the export file
+- tidy formmatting
