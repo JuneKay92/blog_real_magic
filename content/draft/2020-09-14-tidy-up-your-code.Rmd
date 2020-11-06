@@ -1,7 +1,7 @@
 ---
 title: Tidy Up Your Code
 author: Hope Snyder
-date: '2020-09-14'
+date: '2020-10-30'
 slug: tidy-up-your-code
 categories:
   - About
@@ -11,27 +11,74 @@ tags:
   - R
   - code
   - format
-description: ''
+description: 'The one thing you need to do if you share your code is make it readable to others.  Here are some tips and a package that will help.'
 publishDate: '2020-09-14T15:04:29-05:00'
 images: []
 ---
 
-what is the tidy verse
+The most important thing about your code is getting to work.  Even if it's held together by toothpicks and gum.  The sceond most important thing about you code is to then clean it and make it readable to other coders or collaborators.  It is part of the reason I began this blog.  Sharing code is one of the hardest things to do in my opinion.  It's so easy for someone to point out there are so many better ways or find a bug that never appeared on my personal machine.  I want to improve my own code so that others can understand what I am trying to accomplish and accomplish them with me.  
 
-# General formating tips in R
+There are two ways I have found to improve the readability of your code: Base R formatting and the Tidyverse.  
 
-- white space doesn't matter, but makes it look better
-- defining objects with arrow not equal sign, equal is for function arguments
-- commenting and making sections
+# General Formating
 
-# What is the tidyverse?
+First, I will talk about some of the general formatting "rules" in R.  They are not hard and strict rules. Your R code will likely still work without following them.  However, it will be exremely hard for people to understand your code.  
 
-- base packages: dplyr, ggplot2, lubridate
-- what are pipes?
-- how does it change the formatting
+A few typical guidlines include using `<-` to define objects in R and the `=` to clarify function arguments.  Also, it is encouraged to comment and annotate your code.  The way to comment in R is with the `#`.  I typically make large breaks with section headers for variable definitions, calulations, results, and plots.
+
+The main guideline I will stress that you follow is include white space in your code!  It might not be required to make the code run, but line breaks, tabs, and spaces will *always* make your code so much easier to follow.  As an example, let's look at our slope function we made [here](https://realmagic.netlify.app/posts/the-heart-of-r-functions/).
+
+```{r, eval=FALSE}
+slope<-function(X,Y,B){print(paste("The slope is equal to ",(Y-B)/X))}
+```
+
+We know what this function does since we have seen it before.  But if the above code was how it was first shown to you, it would be more of a challenge to figure out exactly how this function works.  Another example using a `for` loop:
+
+```{r, eval=FALSE}
+# Example A
+count=0
+for(i in 1:10){if(i%%2==0)count=count+1}
+print(count)
+
+# Example B
+count <- 0
+
+for(i in 1:10){
+  if(i%%2==0){
+    count=count+1
+  }
+}
+
+print(count)
+```
+
+What exactly are these `for` loops doing?  Both are counting how many numbers in a collection are divisible by 2.  Did it take you longer to figure out Example A because it is one big block of text?  It's very hard to read and I actually missed the `if` statement the first time I read through Example A.  Adding in spacing is like dividing your code into paragraphs and sections.
+
+# The Tidyverse
+
+The tidyverse is a collection of R packages that are designed for data science, according to the [website](https://www.tidyverse.org/) moderated by Hadley Wickham.  The collection of packages all aim to unify and improve the grammar of coding.  You are able to install the entire tidyverse suite by running `install.packages("tidyverse")`.  It includes eight core packages that are all wonderful in their own right.  I invite you to check them all out [here](https://www.tidyverse.org/packages/).
+
+However, the one that perhaps does the most work in the tidyverse is `dplyr`.  This package provides all of the new grammar rules for data manipulation to use within R.  It keeps the general formatting rules of base R but changes the basic formatting through the use of pipes: `%>%`.  These essentially take an object on the left side of the pipe and applies the function on the right side.  In words, you take Object X (usually a data table) and apply a cleaning function.  It sort of reverses the way you think about how functions work in R.  But the nice thing is that you can create a list of piped functions that will be applied in sequence.  This is easier to read than a series of nested functions when it comes to sharing your code.
+
+```{r, eval = FALSE}
+library(dplyr)
+dat <- mtcars %>% 
+  as_tibble() #the data must be tidy
+
+dat %>% 
+  select(mpg, wt, hp) %>%
+  filter(mpg <= 15)
+```
 
 # BaseR vs TidyR
 
-- the debate highlights
-- Which is better? depends baseR for learning, tidy for tidying
-- whatever works for you and whatever people can read and understand
+Similar to the Python vs. R debate, there is a debate among the R community whether or not to use the tidyverse packages.  Just as before, I ride the fence on this debate acknowledging that each formatting methods has advantages and disadvantages depending on the situation.  
+
+The main issue with the general formatting guidelines in base R is that they are guidelines.  There is nothing requiring or encouraging using those rules.  The tidyverse encourages you to improve the formatting or grammar of your coding. When a code is created in the tidyverse, it is very consistent and readable.
+
+However, the tidyverse is mainly focused on data manipulation.  As such most of the grammaticaly techniques can only be used for data structures.  Tidy data structures only.  You need to force your data to fit into a tidy format to use any of the functions provided by the tidyverse packages.  In most cases it is simple to do as can be seen in my example.  However, there are some situations such as when the data sets are small and simple where using tidyverse functions actually do make things more complicated when they do not need to be.  Actually, the author of this [blog post](https://www.r-bloggers.com/2019/12/why-i-dont-use-the-tidyverse/) puts it best (and also relates it to my main issue with Python):  Using the tidyverse changes the structure of the coding language.  Doing that translation from base R takes time and effort.  Some feel that new packages should build on the base language not change it entirely.
+
+In my opinion, base R formatting and functions for data manipulations should be used when learning R.  The logic moves in a more straightforward way than it does with tidyverse.  But if you are trying to do manipulate large, complex data sets, then the tidyverse will outline the exact steps taken to manipulate data.  I love it for this exact reason.  It is wonderful for replicating data analyses and remembering what steps you took and what order you took them in.
+
+</div>
+The most important thing is that you develop and follow your own style of coding.  Use what works for you in whatevet situation you find yourself in.  It might be a little different from others but as long as it is consistent and readable (and works!), it's good code!
