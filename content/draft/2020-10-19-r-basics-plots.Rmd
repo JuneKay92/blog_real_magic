@@ -1,7 +1,7 @@
 ---
 title: 'R Basics: Plots'
 author: Hope Snyder
-date: '2020-10-19'
+date: '2020-11-13'
 slug: r-basics-plots
 categories:
   - How To
@@ -12,22 +12,70 @@ tags:
   - R
   - plot
   - statistics
-description: ''
+description: 'Keep building up the basics with some data visualization.'
 publishDate: '2020-10-19T15:48:34-05:00'
 images: []
 ---
 
-# Basic Spells and Ingredients
+Let's keep our discussion of the basics in R going by talking about some easy methods for data visualization.  These methods should all come with with base R, meaning no extra pacakges are required to make these plots.  However, to make them more visually appealing, extra packages might be required but these functions will at least get you started.  I will be showing the output of the basic function without any formatting here.
 
-- where we left off
-- what stats I'll cover
-- data that we'll use
+Again, for these examples, I will use the `mtcars` data set that is installed along with R.  Note, that in order to get access to just a single column or variable in data sets in R you use the `$` symbol.  For example, to get only the values of the mpg variable from the `mtcars` dataset, use the code `mtcars$mpg`.
 
-# Frequency Plots
+# Frequency Plots 
 
-- barplot, histogram, boxplot, dotplot, scatterplot
+Let's look at some frequency plots first.  These plots are focused mostly on summarizing the data and showing the potential distribution of the data.
+
+## Barplots & Histograms
+
+These two plots are very simiar to each other.  The main difference between them is the type of variable that they plot.  Barplots are for qualitative or categorical variables.  Histograms are used when looking at the frequency of quantitative variables.  It gives you an indication of the distribution of the variable.  As with many of the basic functions in R, the function name is very similar to the procedure you want to run.
+
+For barplots, the function used is `barplot()`.  However, before we can ask R to make a barplot, we need to have the data in the right format: a table.  The table needs to have the categories and the number of times that categories were listed in the data.  Luckily that function also has an easy-to-remember name: `table()`.
+
+```{r}
+adj_data <- table(mtcars$gear)
+barplot(adj_data)
+```
+
+Now for a histogram the function is `hist()`.  Histograms break the range of values into intervals and give the frequency of observations that fall into each interval.  You are able to specify the number of intervals that you would like in the histogram using the argument `breaks`.  You have a few options for defining the breaks in your histogram.  Most often it will be either a vector of the breakpoints in the histogram or a single number for how many intervals to use in the histogram.
+
+```{r}
+hist(mtcars$mpg, breaks = 10)
+```
+
+## Density Plots
+
+A density plot is like a smoothed version of a histogram, again showing an estimation of the distribution of the data.  Two functions are used together to create a density plot: `plot()` and `density()`.  Note that the `plot()` funciton will come back later.
+
+```{r}
+plot(density(mtcars$mpg))
+```
+
+## Boxplots
+
+Boxplots are good as a visual representation of the descriptive statistics of the data.  It shows the median and quartile values as well as the outliers within your data.  The function to use is `boxplot()`.  Note that you can have the boxplots can be divded by groups using the `~` symbol.  
+
+```{r}
+boxplot(mtcars$mpg ~ mtcars$gear)
+```
 
 # Testing Plots
 
-- line plot, qq plot, density plot, correlation plot
+Now let's look at some plots that could potentially connect to statistical test.  These plots can be considered as visual summaries of the results.
 
+## Line and Point Plots
+
+These are used to visualize a singular variable, most often used when data collection also includes a time component.  Here, we come back to the `plot()` function and include the argument `type = "l"` for lines or `type = "p"` for points.  You could also have both on your plot using `type = "b"`.
+
+```{r}
+plot(mtcars$mpg, type = "b")
+```
+
+## Scatterplots
+
+Scatterplots in R are formed again using the `plot()` function.  This time two variables are listed as arguments.  One for the x-axis and the second for y-axis.  This helps to visualize a potential correlation between the two variables of interest.
+
+```{r}
+plot(mtcars$mpg, mtcars$wt)
+```
+
+So far we have gone over basic statistics and plotting in R.  But there is still more to go to build up the basic skills!  We still have importing data and test statistics. Join me next week for importing various data files into R. 
