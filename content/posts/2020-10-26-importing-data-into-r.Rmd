@@ -1,0 +1,94 @@
+---
+title: 'R Basics: Importing Data'
+author: Hope Snyder
+date: '2020-11-20'
+slug: importing-data-into-r
+categories:
+  - How To
+  - R Packages
+  - Data
+tags:
+  - beginner
+  - code
+  - R
+  - data
+  - about
+description: 'Now that we know some basics of what to do with your data, how do you get your data into R?'
+publishDate: '2020-10-26T15:46:42-05:00'
+images: []
+---
+
+In most cases, the first thing that is done in a new code file is getting your data into R.  There are a few options that you can do here, including hard coding it in to the coding environment.  However, there are a lot of easier ways to import your data by reading the data files directly.  
+
+For most of these options, you are going to need some extra packages to help R understand the files.  The needed packages will be in the sections corresponding to the file types.
+
+<img src="/image/find_data.png" width=200 class="center"/>
+
+# Finding Your Data
+
+The first thing that R needs to know is where your data is located.  It needs to be told how to get there from where you are currently working.  Where you are currently working is called the "working directory." R will tell you what the current working directory is by running the function `getwd()`.  If you have your code organized into projects, the working directory is automatically setup to direct R to that projects folder (Check [here](https://realmagic.netlify.app/posts/getting-organized-with-r-projects/) for help!)
+
+However, if you are working outside of a project and need to adjust the working directory the function `setwd()` is how to do it.  Within the parentheses, you put the path to what ever folder you want to work from.  This path must be in quotation marks!  If you are working in RStudio, there is a menu option to help with this under "Session", then "Set Working Directory" *or* the keyboard shortcut `Ctrl + Shift + H`.  A browser window will appear as it does when you are saving or opening files to help you navigate to exactly where you want to work from.  
+
+# Reading the Data
+
+## CSV files
+
+For CSV (comma separated value) files, there are a few ways to get the data read into R.  In the Files pane in RStudio, it generally will recognize that CSV files are data sets.  If you click on the file a drop down menu with an option for importing the data set should be available.  This option will give a preview of the data set in R and the code that would accomplish the same thing.  
+
+To read in CSV files does not require any packages.  There are two common functions that will read in the data.  First, is `read.csv()`.  The required arguments are the file name in quotations and an indicator of how the different values are separated in the file.  Most often this will be a comma, but there are other options available.
+
+```{r, eval = FALSE}
+read.csv(file = "your_data.csv", sep = ",")
+```
+
+The second option to read in csv files is to use `read.table()`.  This function works in much the same way as the previous one.  However, here you need to tell R whether or not the data file includes the column or variable names.
+
+```{r, eval = FALSE}
+read.table(file = "your_data.csv", header = TRUE, sep = ",")
+```
+
+## Excel
+
+For data files from Excel, there are again a few options for reading data.  You could save the data file as a ".csv" from Excel.  Then use the options discussed in the previous section.
+
+Or if you just want to read in the data, R can do that!  There are two package options that you can use.  The `xlsx` package will read in an Excel spreadsheet and you can also specify what sheet you would like to use if the file contains more than one.  However, you might notice that the documentation for this package specifies the versions of Excel it works with and it may be a little out of date.
+
+```{r, eval = FALSE}
+library(xlsx)
+
+read.xlsx(file = "your_data.xlsx", 1)
+```
+
+The `readxl` package is a part of the [tidyverse](https://realmagic.netlify.app/posts/tidy-up-your-code/) and will format your data into a tibble.  It comes with a few example spreadsheets so you can test out the functionality of the package.  You can access them with the `readxl_example()` function.  
+
+```{r, eval = FALSE}
+library(readxl)
+
+read_excel(path = "your_data.xlsx")
+```
+
+## SPSS
+
+SPSS is another statistical program based on point and click.  I believe it is inferior to R as it acts more like a black box and the computations are unclear.  However, it's method of inputting data is very clean and everything ends up well defined.  To read in data from SPSS, the `foreign` package needs to be used.  The function used is `read.spss()`.  This function will retrieve all of the characteristics from the `.sav` files that data is saved under in SPSS.
+
+```{r, eval = FALSE}
+library(foreign)
+
+read.spss(file = "your_data.sav", use.value.labels = TRUE, to.data.frame = TRUE)
+```
+
+## SAS
+
+The final form of data I will talk about reading data from is SAS `.xpt` files.  SAS is another statistical program that is again very much a black box.  It has a bit more control in the options than SPSS but it seems very out of date and challenging to learn.  
+
+To read SAS data files, the `Hmisc` package is necessary.  The function used is `sasxport.get()`.  This function I have not used too often, so I am unsure of the intricacies involved.
+
+```{r, eval = FALSE}
+library(Hmisc)
+
+read.spss(file = "your_data.xpt")
+```
+
+</div></div>
+So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/), plotting, and importing data into R.  Next week I'll take about how to run some statistical tests and reading the results! 
