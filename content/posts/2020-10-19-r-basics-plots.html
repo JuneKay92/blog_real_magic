@@ -1,0 +1,69 @@
+---
+title: 'R Basics: Plots'
+author: Hope Snyder
+date: '2020-11-13'
+slug: r-basics-plots
+categories:
+  - How To
+  - R Packages
+tags:
+  - beginner
+  - code
+  - R
+  - plot
+  - statistics
+description: 'Keep building up the basics with some data visualization.'
+publishDate: '2020-10-19T15:48:34-05:00'
+images: []
+---
+
+
+
+<p>Let’s keep our discussion of the basics in R going by talking about some easy methods for data visualization. These methods should all come with with base R, meaning no extra packages are required to make these plots. However, to make them more visually appealing, extra packages might be required but these functions will at least get you started. I will be showing the output of the basic function without any formatting here.</p>
+<p>Again, for these examples, I will use the <code>mtcars</code> data set that is installed along with R. Note, that in order to get access to just a single column or variable in data sets in R you use the <code>$</code> symbol. For example, to get only the values of the mpg variable from the <code>mtcars</code> data set, use the code <code>mtcars$mpg</code>.</p>
+<div id="frequency-plots" class="section level1">
+<h1>Frequency Plots</h1>
+<p>Let’s look at some frequency plots first. These plots are focused mostly on summarizing the data and showing the potential distribution of the data.</p>
+<div id="bar-plots-histograms" class="section level2">
+<h2>Bar Plots &amp; Histograms</h2>
+<p>These two plots are very similar to each other. The main difference between them is the type of variable that they plot. Bar plots are for qualitative or categorical variables. Histograms are used when looking at the frequency of quantitative variables. It gives you an indication of the distribution of the variable. As with many of the basic functions in R, the function name is very similar to the procedure you want to run.</p>
+<p>For bar plots, the function used is <code>barplot()</code>. However, before we can ask R to make a bar plot, we need to have the data in the right format: a table. The table needs to have the categories and the number of times that categories were listed in the data. Luckily that function also has an easy-to-remember name: <code>table()</code>.</p>
+<pre class="r"><code>adj_data &lt;- table(mtcars$gear)
+barplot(adj_data)</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Now for a histogram the function is <code>hist()</code>. Histograms break the range of values into intervals and give the frequency of observations that fall into each interval. You are able to specify the number of intervals that you would like in the histogram using the argument <code>breaks</code>. You have a few options for defining the breaks in your histogram. Most often it will be either a vector of the breakpoints in the histogram or a single number for how many intervals to use in the histogram.</p>
+<pre class="r"><code>hist(mtcars$mpg, breaks = 10)</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="density-plots" class="section level2">
+<h2>Density Plots</h2>
+<p>A density plot is like a smoothed version of a histogram, again showing an estimation of the distribution of the data. Two functions are used together to create a density plot: <code>plot()</code> and <code>density()</code>. Note that the <code>plot()</code> function will come back later.</p>
+<pre class="r"><code>plot(density(mtcars$mpg))</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="box-plots" class="section level2">
+<h2>Box Plots</h2>
+<p>Box plots are good as a visual representation of the descriptive statistics of the data. It shows the median and quarterly values as well as the outliers within your data. The function to use is <code>boxplot()</code>. Note that you can have the box plots can be divided by groups using the <code>~</code> symbol.</p>
+<pre class="r"><code>boxplot(mtcars$mpg ~ mtcars$gear)</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="testing-plots" class="section level1">
+<h1>Testing Plots</h1>
+<p>Now let’s look at some plots that could potentially connect to statistical test. These plots can be considered as visual summaries of the results.</p>
+<div id="line-and-point-plots" class="section level2">
+<h2>Line and Point Plots</h2>
+<p>These are used to visualize a singular variable, most often used when data collection also includes a time component. Here, we come back to the <code>plot()</code> function and include the argument <code>type = "l"</code> for lines or <code>type = "p"</code> for points. You could also have both on your plot using <code>type = "b"</code>.</p>
+<pre class="r"><code>plot(mtcars$mpg, type = &quot;b&quot;)</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="scatter-plots" class="section level2">
+<h2>Scatter Plots</h2>
+<p>Scatter plots in R are formed again using the <code>plot()</code> function. This time two variables are listed as arguments. One for the x-axis and the second for y-axis. This helps to visualize a potential correlation between the two variables of interest.</p>
+<pre class="r"><code>plot(mtcars$mpg, mtcars$wt)</code></pre>
+<p><img src="/posts/2020-10-19-r-basics-plots_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+</div>
+<p>So far we have gone over <a href="https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/">basic statistics</a> and plotting in R. But there is still more to go to build up the basic skills! We still have importing data and test statistics. Join me next week for importing various data files into R.</p>
+</div>
+</div>
