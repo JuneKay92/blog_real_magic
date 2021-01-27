@@ -1,0 +1,31 @@
+---
+title: 'R Basics: Statistical Tests'
+author: Hope Snyder
+date: '2020-12-04'
+slug: r-basics-statistical-tests
+categories:
+  - How To
+tags:
+  - beginner
+  - code
+  - data
+  - R
+  - statistics
+description: 'Your data is ready, time to run some tests and do some inferencing!'
+publishDate: '2020-12-01T13:52:19-06:00'
+images: []
+---
+
+# Comparisons of Two or Less
+
+- correlations
+- t-tests
+- Wilcoxon signed
+- goodness of fit (fishers & chi squared)
+
+# Comparisons of Three or More
+
+- regression
+- anova
+- resampling(?)
+

@@ -11,7 +11,7 @@ tags:
   - package
   - R
   - iteration
-description: ''
+description: 'Do you have a chunk of code that you want to apply to multiple values?  We can do that!'
 publishDate: '2020-09-28T15:43:46-05:00'
 images: []
 ---

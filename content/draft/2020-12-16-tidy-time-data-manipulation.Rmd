@@ -1,0 +1,32 @@
+---
+title: 'Tidy Time: Data Manipulation'
+author: Hope Snyder
+date: '2020-12-16'
+slug: tidy-time-data-manipulation
+categories:
+  - R Packages
+  - How To
+tags:
+  - code
+  - data
+  - format
+  - organization
+  - R
+description: ''
+publishDate: '2020-12-16T16:30:27-06:00'
+images: []
+---
+
+# Organization
+
+- subsets: filter, select
+- reorganize: group_by, rename
+
+# New variables
+
+- mutate, count, summarize
+
+# Saving 
+
+- .rds files
+- other options

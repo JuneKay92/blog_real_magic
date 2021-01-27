@@ -1,0 +1,59 @@
+---
+title: 'Pleasant Packages: Brrr'
+author: Hope Snyder
+date: '2020-12-16'
+slug: pleasant-packages-brrr
+categories:
+  - R Packages
+  - How To
+  - Fun
+tags:
+  - fun
+  - R
+  - package
+  - music
+description: "It's the holidays.  Let's have some fun and make some music!"
+publishDate: '2020-12-16T16:19:24-06:00'
+images: []
+---
+
+# What is brrr?
+
+- R is versitile and fun, depending on what you know how to do
+- ([BRRR](https://github.com/brooke-watson/BRRR/blob/master/README.md))
+- why? for notifications when something is done running
+
+# Install and basics
+
+- extra packages needed : audio on windows, linux needs some extra utilities
+- based on beepr package
+- only one function! and finding the arguments
+
+# Example of a song
+
+```{r, eval = FALSE, cache = TRUE}
+library(BRRR)
+library(purrr)
+library(tibble)
+
+size <- 5
+
+rap_beats <- function(size) {
+  
+  x <- data.frame(artist = sample(1:length(skrrrahh_list()), 
+                                  size = size, 
+                                  replace = TRUE), 
+                  delay = sample(seq(from = .1, to = 1, by = .1), 
+                                 size = size,
+                                 replace = TRUE))
+  
+  rap_wait <- function(sound, sleep){
+    skrrrahh(sound)
+    Sys.sleep(sleep)
+  }
+  
+  walk2(.x = x$artist, .y = x$delay, rap_wait)
+}
+
+rap_beats(50)
+```
