@@ -1,0 +1,94 @@
+---
+title: 'R Basics: Statistical Tests Part 2'
+author: Hope Snyder
+date: '2020-12-11'
+slug: r-basics-statistical-tests-part-2
+categories:
+  - How To
+tags:
+  - beginner
+  - code
+  - intro
+  - R
+  - statistics
+description: 'Time to do (a little more complicated) statistical tests and inferecing!'
+publishDate: '2021-02-26T12:01:54-06:00'
+images: []
+---
+
+
+
+<p>Let’s continue our discussion of statistical tests with comparisons for data with three or more groups. For a detailed description of any of the tests and calculations I show here, you should look elsewhere (Wikipedia is a good source!). I will only show you how to do them in R and how to interpret the results.</p>
+<p>Again, for these examples, I will use the <code>mtcars</code> data set that is installed along with R. Note, that in order to get access to just a single column or variable in data sets in R you use the <code>$</code> symbol. For example, to get only the values of the mpg variable from the <code>mtcars</code> dataset, use the code <code>mtcars$mpg</code>.</p>
+<div id="anovas" class="section level1">
+<h1>ANOVAs</h1>
+<p>The most common way to compare three or more group averages is by coducting an Analysis of Variance, or ANOVA. The imporant thing to know about ANOVAs is that it will compare any number of groups, however it will only tell you that a difference exists SOMEWHERE. It doesn’t tell you which groups are different. Post-hoc tests often follow an ANOVA test to determine where the difference is located.</p>
+<p>In my example, I adjusted the dataset a little by making one of the variables a factor variable. This will define the groups to use in the ANOVA test.</p>
+<pre class="r"><code>mtcars$cyl &lt;- as.factor(mtcars$cyl)
+
+anova &lt;- aov(mpg ~ cyl, data = mtcars)
+
+summary(anova)</code></pre>
+<p>To get the results of the ANOVA from R, you need to ask for a summary of the ANOVA model. The last two columns of the table that appears hold the test statistic and the p-value for the ANOVA. R is really nice here because it will star the significant results in this table. To interpret this result, you would say something like “There is a difference in the average miles per gallon in cars with different numbers of cylinders in the engine (<span class="math inline">\(F(2,29)=39.7\)</span>,<span class="math inline">\(p&lt;.001\)</span>).”.</p>
+<p>In this example, I have done a one-way ANOVA. The “one” refers to the one factor I used to define my groups. If I had second factor in the dataset, I would perform a two-way ANOVA. The code would be similar to above, but you would add the second factor to the ANOVA model statement.</p>
+</div>
+<div id="regression" class="section level1">
+<h1>Regression</h1>
+<p>Regression is a vast area of statistics. I could write an entire blog about regression. However, here I’ll go over the basics of conducting a simple regression in R. Regression is another way to examine the relationship between variables. Using this method, you can see an estimation of how much a change in one variable can effect another.</p>
+<p>The variables in regression are often divided into what you are trying to predict (the dependent variable) and what you are using to make the prediction (the independent varibles or predictors). It’s important to make this distinction before you start! For our example, let’s predict miles per gallon from horsepower.</p>
+<pre class="r"><code>fit &lt;- lm(mpg ~ hp, data=mtcars)
+summary(fit)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ hp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.7121 -2.1122 -0.8854  1.5819  8.2360 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 30.09886    1.63392  18.421  &lt; 2e-16 ***
+## hp          -0.06823    0.01012  -6.742 1.79e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.863 on 30 degrees of freedom
+## Multiple R-squared:  0.6024, Adjusted R-squared:  0.5892 
+## F-statistic: 45.46 on 1 and 30 DF,  p-value: 1.788e-07</code></pre>
+<p>The first thing you should not is how similar this output is to ANOVA output. When you predictor variable is categorical, or defines a group, regression and ANOVA should be pretty similar. The second thing you should look at is the plot of the regression line.</p>
+<pre class="r"><code>plot(mtcars$hp, mtcars$mpg)
+abline(fit)</code></pre>
+<p><img src="/draft/2021-02-26-r-basics-statistical-tests-part-2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>It’s the same plot that we had when we looked at the correlation between these two variables. We have just added the regression line to gain some more insight into the relationship between horsepower and correlation.</p>
+</div>
+<div id="tests-of-independence" class="section level1">
+<h1>Tests of Independence</h1>
+<p>The last tests I will go over as basics are the Chi-Squared (<span class="math inline">\(\chi^2\)</span>) test and Fisher’s Exact test. These tests are applied when you are classifying data into muliple groups. Is there a difference between the number of observations who fall into each group?</p>
+<p>Since these tests rely on frequencies of observations in a specific category, it is helpful to create a frequency table.</p>
+<pre class="r"><code># Number of cylinders in engine
+mtcars$cyl &lt;- as.factor(mtcars$cyl)
+
+# Automatic transmission (0 = automatic, 1 = manual)
+mtcars$am &lt;- as.factor(mtcars$am)
+
+freq &lt;- table(mtcars$am, mtcars$cyl)
+freq</code></pre>
+<pre><code>##    
+##      4  6  8
+##   0  3  4 12
+##   1  8  3  2</code></pre>
+<p>A Chi-Squared (<span class="math inline">\(\chi^2\)</span>) test or Fisher’s Exact test will test if the differences in the amount in each group is significant. The difference between the tests is that, as the name implies, a Fisher’s test is more exact. However, the output from the Fisher’s test in R only includes the p-value, so I would recommend using and reporting the Chi-squared value instead.</p>
+<pre class="r"><code>chisq.test(freq)</code></pre>
+<pre><code>## Warning in chisq.test(freq): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  freq
+## X-squared = 8.7407, df = 2, p-value = 0.01265</code></pre>
+<pre class="r"><code>#fisher.test(freq)</code></pre>
+<p>The output would be interpreted as: “The frequency of cars in each group is different from what was expected (<span class="math inline">\(\chi^2(2)=8.74\)</span>, <span class="math inline">\(p=.013\)</span>).”</p>
+</div>
+</div>
+<p>So far we have gone over <a href="https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/">basic statistics</a>, <a href="https://realmagic.netlify.app/posts/r-basics-plots/">plotting</a>, <a href="https://realmagic.netlify.app/posts/importing-data-into-r/">importing data</a>, and some statistical tests (for two groups and more). That concludes my series for R basics for now. I may revisit it again in the future, but let me know if there is something you think I should add!</p>
+</div>

@@ -1,0 +1,64 @@
+---
+title: 'Pleasant Packages: Brrr'
+author: Hope Snyder
+date: '2020-12-16'
+slug: pleasant-packages-brrr
+categories:
+  - R Packages
+  - How To
+  - Fun
+tags:
+  - fun
+  - R
+  - package
+  - music
+description: "It's the holidays.  Let's have some fun and make some music!"
+publishDate: '2020-12-16T16:19:24-06:00'
+images: []
+---
+
+
+
+<div id="what-is-brrr" class="section level1">
+<h1>What is brrr?</h1>
+<ul>
+<li>R is versitile and fun, depending on what you know how to do</li>
+<li>(<a href="https://github.com/brooke-watson/BRRR/blob/master/README.md">BRRR</a>)</li>
+<li>why? for notifications when something is done running</li>
+</ul>
+</div>
+<div id="install-and-basics" class="section level1">
+<h1>Install and basics</h1>
+<ul>
+<li>extra packages needed : audio on windows, linux needs some extra utilities</li>
+<li>based on beepr package</li>
+<li>only one function! and finding the arguments</li>
+</ul>
+</div>
+<div id="example-of-a-song" class="section level1">
+<h1>Example of a song</h1>
+<pre class="r"><code>library(BRRR)
+library(purrr)
+library(tibble)
+
+size &lt;- 5
+
+rap_beats &lt;- function(size) {
+  
+  x &lt;- data.frame(artist = sample(1:length(skrrrahh_list()), 
+                                  size = size, 
+                                  replace = TRUE), 
+                  delay = sample(seq(from = .1, to = 1, by = .1), 
+                                 size = size,
+                                 replace = TRUE))
+  
+  rap_wait &lt;- function(sound, sleep){
+    skrrrahh(sound)
+    Sys.sleep(sleep)
+  }
+  
+  walk2(.x = x$artist, .y = x$delay, rap_wait)
+}
+
+rap_beats(50)</code></pre>
+</div>
