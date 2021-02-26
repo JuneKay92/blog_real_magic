@@ -1,0 +1,88 @@
+---
+title: 'R Basics: Statistical Tests Part 1'
+author: Hope Snyder
+date: '2020-12-04'
+slug: r-basics-statistical-tests
+categories:
+  - How To
+tags:
+  - beginner
+  - code
+  - data
+  - R
+  - statistics
+description: "Your data is ready, time to run some tests and do some inferencing!"
+publishDate: '2020-12-01T13:52:19-06:00'
+images: []
+header-includes:
+  - <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  - <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+---
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<p>Okay! You have your data read into R, you’ve looked at it a little bit with plots and other descriptive statistics. Now, it’s time to run some tests! Do some more rigorous examinations and comparisons. For a detailed description of any of the tests and calculations I show here, you should look elsewhere (Wikipedia is actually a good source!). I am only going to show you how to do them in R and how to interpret the results.</p>
+<p>There are so many statistical tests out there in the wild and each do many fantastic and complex things! It’s hard to know where to start or where to define the basics. For me the basics are comparing one or two sets of information. In another post, we will go over tests that compare three or more groups.</p>
+<p>Again, for these examples, I will use the <code>mtcars</code> data set that is installed along with R. Note, that in order to get access to just a single column or variable in data sets in R you use the <code>$</code> symbol. For example, to get only the values of the mpg variable from the <code>mtcars</code> data set, use the code <code>mtcars$mpg</code>.</p>
+<div id="correlations" class="section level1">
+<h1>Correlations</h1>
+<p>Correlations show the relationship between two variables. There are three options here: positive (one goes up, the other goes up), negative (one goes up, the other goes down), and none.</p>
+<p>To get a correlation in R, use the <code>cor()</code> function. This function requires two arguments, the two variables you want to compare. It also helps to create a scatterplot so you can visualize what is going on. In this example, while not a perfect line, there appears to be a negative relationship between a car’s miles per gallon and its horsepower. So as the horsepower increases, the miles per gallon decreases.</p>
+<pre class="r"><code>cor(mtcars$hp, mtcars$mpg)</code></pre>
+<pre><code>## [1] -0.7761684</code></pre>
+<pre class="r"><code>plot(mtcars$hp, mtcars$mpg)</code></pre>
+<p><img src="/posts/2020-12-01-r-basics-statistical-tests_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="comparing-the-mean" class="section level1">
+<h1>Comparing the Mean</h1>
+<p>There are multiple ways to test whether the mean of a variable is equal to a certain value or is similar to the mean of a second variable. I’ll go over the ones you will see most often.</p>
+<div id="one-sample-t-tests" class="section level2">
+<h2>One Sample <span class="math inline">\(t\)</span>-Tests</h2>
+<p>The tests you will see most often are t-tests. One sample t-tests compare the mean of one variable to a value (most often zero). Let’s compare and see if the average miles per gallon is significantly different from zero.</p>
+<pre class="r"><code>t.test(mtcars$mpg, mu = 0)</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  mtcars$mpg
+## t = 18.857, df = 31, p-value &lt; 2.2e-16
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  17.91768 22.26357
+## sample estimates:
+## mean of x 
+##  20.09062</code></pre>
+<p>There is a lot of output that appears here, but if you go through it piece by piece, it becomes clear. First, the test statistic, degrees of freedom, and p-value will be the numbers you report in a written report. Here, the interpretation would be “The average miles per gallon of the examined vehicles is <span class="math inline">\(20.09\)</span>, which is significantly different from zero (<span class="math inline">\(t(31)=18.86\)</span>, <span class="math inline">\(p&lt;.001\)</span>).”</p>
+</div>
+<div id="two-sample-t-tests" class="section level2">
+<h2>Two Sample <span class="math inline">\(t\)</span>-Tests</h2>
+<p>There are two different kinds of two sample t-tests: Independent and Dependent (or Paired). However, the code needed is very similar to the previous command, with a few additions. For independent tests, add in the second variable. For dependent variables, you need the extra argument <code>paired = TRUE</code> so R knows that the groups are connected.</p>
+<pre class="r"><code># Independent
+t.test(mtcars$mpg, mtcars$hp)
+
+#Dependent
+t.test(mtcars$mpg, mtcars$hp, paired = TRUE)</code></pre>
+<p>The output and interpretations will also be similar. Instead of being different from a specific value, discuss how the groups are different from one another: “The average miles per gallon of the examined vehicles is <span class="math inline">\(20.09\)</span>, which is significantly lower than the average horsepower of the vehicles (<span class="math inline">\(t(31.48)=-10.41\)</span>, <span class="math inline">\(p&lt;.001\)</span>).” These results are expected since these are actually measuring two very different things. In real tests, the observed variable should be the same for both groups. The set up for the code would be a little different as we need to define the groups to compare.</p>
+<pre class="r"><code># We will use the variable for automatic transmission
+# 0 = automatic, 1 = manual
+mtcars$am &lt;- as.factor(mtcars$am)
+
+# Independent
+t.test(mpg ~ am, data = mtcars)</code></pre>
+</div>
+<div id="non-parametric-tests" class="section level2">
+<h2>Non-parametric Tests</h2>
+<p>The final example I have for comparing the means is the Non-parametric tests. You can use these tests in place of a t-test, especially when the doesn’t follow a known distribution. The test to compare means is called the Wilcoxon Ranked Sum test. It is based on the “sign” and “rank” of a data point, hence the name Rank Sum. Non-parametric tests are interpreted in a similar way to t-tests and the code again is very similar.</p>
+<pre class="r"><code># Independent
+wilcox.test(mtcars$mpg, mtcars$hp)
+# OR
+wilcox.test(mpg ~ am, data = mtcars)
+
+#Dependent
+wilcox.test(mtcars$mpg, mtcars$hp, paired = TRUE)</code></pre>
+</div>
+</div>
+<p>So far we have gone over <a href="https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/">basic statistics</a>, <a href="https://realmagic.netlify.app/posts/r-basics-plots/">plotting</a>, <a href="https://realmagic.netlify.app/posts/importing-data-into-r/">importing data</a>, and started reviewing some basic statistical tests. We will finish the discussion of statistical tests next!</p>
+</div>
+</div>
