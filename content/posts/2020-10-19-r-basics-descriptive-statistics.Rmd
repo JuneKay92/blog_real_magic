@@ -86,4 +86,4 @@ var(mtcars$mpg)
 ```
 
 </div></div>
-There are obviously more basics to go over in R: [Plots](https://realmagic.netlify.app/posts/r-basics-plots/) for data visualization, [importing your data](https://realmagic.netlify.app/posts/importing-data-into-r/), and test statistics for inference. Join me next week for some basics about plots in R.  
+There are obviously more basics to go over in R: [Plots](https://realmagic.netlify.app/posts/r-basics-plots/) for data visualization, [importing your data](https://realmagic.netlify.app/posts/importing-data-into-r/), and test statistics for inference (for [two groups](https://realmagic.netlify.app/posts/r-basics-statistical-tests/) or [more](https://realmagic.netlify.app/posts/r-basics-statistical-tests-part-2/)). Join me next week for some basics about plots in R.  

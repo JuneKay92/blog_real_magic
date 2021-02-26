@@ -91,4 +91,4 @@ read.spss(file = "your_data.xpt")
 ```
 
 </div></div>
-So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/), [plotting](https://realmagic.netlify.app/posts/r-basics-plots/), and importing data into R.  Next week I'll take about how to run some statistical tests and reading the results! 
+So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/), [plotting](https://realmagic.netlify.app/posts/r-basics-plots/), and importing data into R.  Next week I'll take about how to run some statistical tests (for [two groups](https://realmagic.netlify.app/posts/r-basics-statistical-tests/) or [more](https://realmagic.netlify.app/posts/r-basics-statistical-tests-part-2/)) and reading the results! 

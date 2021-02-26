@@ -79,4 +79,4 @@ plot(mtcars$mpg, mtcars$wt)
 ```
 
 </div></div>
-So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/) and plotting in R.  But there is still more to go to build up the basic skills!  We still have [importing data](https://realmagic.netlify.app/posts/importing-data-into-r/) and test statistics. Join me next week for importing various data files into R. 
+So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/) and plotting in R.  But there is still more to go to build up the basic skills!  We still have [importing data](https://realmagic.netlify.app/posts/importing-data-into-r/) and test statistics (for [two groups](https://realmagic.netlify.app/posts/r-basics-statistical-tests/) or [more](https://realmagic.netlify.app/posts/r-basics-statistical-tests-part-2/)). Join me next week for importing various data files into R. 

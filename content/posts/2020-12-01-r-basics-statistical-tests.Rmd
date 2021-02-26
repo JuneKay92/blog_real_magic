@@ -85,4 +85,4 @@ wilcox.test(mtcars$mpg, mtcars$hp, paired = TRUE)
 ```
 
 </div></div>
-So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/), [plotting](https://realmagic.netlify.app/posts/r-basics-plots/), [importing data](https://realmagic.netlify.app/posts/importing-data-into-r/), and started reviewing some basic statistical tests.  We will finish the discussion of statistical tests next! 
+So far we have gone over [basic statistics](https://realmagic.netlify.app/posts/r-basics-descriptive-statistics/), [plotting](https://realmagic.netlify.app/posts/r-basics-plots/), [importing data](https://realmagic.netlify.app/posts/importing-data-into-r/), and started reviewing some basic statistical tests.  We will finish the discussion of statistical tests [next](https://realmagic.netlify.app/posts/r-basics-statistical-tests-part-2/)! 
